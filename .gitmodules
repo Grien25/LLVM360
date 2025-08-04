@@ -1,3 +1,9 @@
 [submodule "external/imgui"]
 	path = external/imgui
 	url = https://github.com/ocornut/imgui.git
+[submodule "external/recompiler"]
+	path = external/recompiler
+	url = https://github.com/rexdex/recompiler.git
+[submodule "external/xenia"]
+	path = external/xenia
+	url = https://github.com/xenia-project/xenia.git
