@@ -1,35 +1,50 @@
 # LLVM360 Project
 
-LLVM360 is a modular toolkit and emulator framework for Xbox 360 binaries, focused on reverse engineering, static analysis, and dynamic emulation. The project integrates custom tools, recompilers, and open-source components to provide a comprehensive environment for exploring and running Xbox 360 executables.
+LLVM360 is an experimental static recompiler for Xbox 360 software (games and OS), aiming to translate PowerPC machine code from Xbox 360 binaries into native Windows executables. Unlike traditional emulators, LLVM360 performs ahead-of-time (AOT) recompilation, producing optimized x86-64 binaries that run natively on PC. The project leverages the LLVM compiler framework for code translation and optimization, and implements a partial Xbox 360 runtime environment for compatibility.
 
-## Project Structure
+## Project Overview
 
-- **llvm360/Emulator/**: Core emulator implementation for Xbox 360 binaries, using LLVM for code analysis and dynamic recompilation.
-- **llvm360/Naive+/**: Experimental or alternative analysis/recompilation engine for Xbox 360 binaries.
-- **external/imgui/**: [Dear ImGui](https://github.com/ocornut/imgui) library for building graphical user interfaces in the emulator and tools.
-- **external/recompiler/**: Standalone recompiler and analysis tool with a GUI for project management, memory viewing, and symbol navigation.
-- **external/xenia/**: [Xenia](https://github.com/xenia-project/xenia) Xbox 360 emulator, included as a submodule for reference and backend support.
-- **CMakeLists.txt / CMakeSettings.json**: CMake-based build system for configuring and building all components.
-- **compile.bat**: Windows batch script for building the project.
+- **Goal:** Statically recompile Xbox 360 executables (XEX files) into Windows .exe files, enabling games and system software to run on PC without runtime interpretation.
+- **Approach:** Parse and decode PowerPC instructions, translate them to LLVM IR, optimize and compile to x86-64, and link with a custom runtime that emulates Xbox 360 OS calls.
+- **Status:** Core pipeline is functional—XEX loading, instruction decoding, IR generation, and native binary output are implemented. Many system calls and advanced CPU features are still in progress.
+
+## Major Components
+
+- **llvm360/Naive+/**: Core recompiler—PowerPC instruction decoder, IR generator, and translation logic.
+- **llvm360/Emulator/**: Runtime environment for the recompiled code, including memory management and Xbox 360 OS call emulation (HLE approach).
+- **external/imgui/**: [Dear ImGui](https://github.com/ocornut/imgui) for GUI tools and debugging interfaces.
+- **external/recompiler/**: Standalone GUI tool for project management, memory viewing, and symbol navigation.
+- **external/xenia/**: [Xenia](https://github.com/xenia-project/xenia) Xbox 360 emulator, included for reference and possible backend support.
+- **CMakeLists.txt / CMakeSettings.json**: CMake-based build system for all components.
+- **compile.bat**: Batch script for building the project on Windows.
 
 ## Features
 
-- Load, analyze, and emulate Xbox 360 binaries (XEX, ELF, etc.).
-- Project-based workflow: create, save, and manage analysis projects.
-- Memory viewer, symbol browser, and disassembly tools.
-- GUI tools built with Dear ImGui for interactive exploration.
-- Integration with Xenia for advanced emulation and debugging.
+- Load and parse Xbox 360 XEX binaries (with code borrowed from prior recompiler projects).
+- Decode and translate PowerPC instructions to LLVM IR (basic integer/control-flow supported; floating-point/VMX in progress).
+- Generate, optimize, and link x86-64 executables using LLVM and MSVC toolchain.
+- Emulate Xbox 360 OS calls and memory management via a custom runtime (many functions stubbed, some implemented).
+- Early GUI tooling for project management and debugging (ImGui-based, prototype stage).
+
+## Current Limitations
+
+- Not all PowerPC instructions are supported (VMX, floating-point, and some special instructions are incomplete).
+- Many Xbox 360 kernel and system calls are stubbed or partially implemented.
+- Multi-threading and synchronization primitives are recognized but not fully functional.
+- No GPU or audio emulation yet—graphics/audio calls are not handled.
+- GUI is in early development; not yet user-facing.
 
 ## Getting Started
 
 1. Clone the repository and its submodules.
-2. Install dependencies ([CMake Binary][CMake], [win-llvm][win-llvm], and Visual Studio with the proper tools installed).
-3. Move the win-llvm files into a folder, for this project we put them in `C:/LLVM19` but developers may change it.
-4. Run `cmake -B out -DLLVM_USE_CRT_RELEASE=MT -DCMAKE_PREFIX_PATH=<LLVM_BINS_>` (LLVM_BINS is the root folder where you stored your LLVM libs mine is "C:/LLVM19" for example)
-5. In the "out/" folder open the `LLVM360.sln`. If everything is good and i or you didn't messed up something, it should compile fine
+2. Install dependencies ([CMake][CMake], [win-llvm][win-llvm], and Visual Studio with the proper tools installed).
+3. Place win-llvm files in a folder (e.g., `C:/LLVM19`).
+4. Run `cmake -B out -DLLVM_USE_CRT_RELEASE=MT -DCMAKE_PREFIX_PATH=<LLVM_BINS_>` (replace `<LLVM_BINS_>` with your LLVM libs path).
+5. Open `LLVM360.sln` in the `out/` folder and build the solution.
+
 ## Contributing
 
-Contributions are welcome! Please see the `TODO.md` for guidelines, and open pull requests for discussion. Join the [Discord][dis] for better communication!
+Contributions are welcome! See `TODO.md` for guidelines and join the [Discord][dis] for discussion. Please open pull requests for code contributions.
 
 ## License
 
