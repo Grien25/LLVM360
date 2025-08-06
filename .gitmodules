@@ -7,3 +7,6 @@
 [submodule "external/xenia"]
 	path = external/xenia
 	url = https://github.com/xenia-project/xenia.git
+[submodule "external/xenon"]
+	path = external/xenon
+	url = https://github.com/xenon-emu/xenon.git
