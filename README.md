@@ -13,6 +13,17 @@ The project is architecturally divided into two main parts:
 1.  **`Naive+` (The Recompiler)**: An offline command-line tool that analyzes an Xbox 360 `.xex` file and translates its PowerPC code into LLVM Intermediate Representation (IR).
 2.  **`Emulator` (The Runtime)**: A Windows DLL that provides the necessary environment for the recompiled code to execute. It manages the virtual memory space, CPU state, and provides implementations for kernel and system library calls.
 
+## Project Workflow
+
+- **Run `Naive+` on a `.xex`:** Use the command-line recompiler on a game's or homebrew's Xbox 360 executable.
+- **Generate outputs (`.ll` + `.tss`):** The recompiler emits an LLVM IR file (`.ll`) with translated code and a runtime metadata file (`.tss`) describing module layout, imports/exports, and other runtime needs.
+- **Compile and link:** The `.ll` file is compiled to a native object file and linked together with the runtime (`Emulator.dll`) and any required support libraries to produce a final, runnable Windows executable.
+- **Run with the runtime:** The produced binary loads `Emulator.dll`, which provides the kernel and environment services the recompiled code expects.
+
+## Why LLVM?
+
+LLVM provides a mature, platform-independent IR and industry-grade optimization passes with high-quality backends (e.g., x86-64), enabling aggressive, portable optimization of recompiled code while leveraging a rich ecosystem of analysis and tooling.
+
 ## Current Status
 
 The project is currently in a foundational, experimental phase.
@@ -27,16 +38,16 @@ The project is currently in a foundational, experimental phase.
 * **Runtime (`Emulator`):**
     * Provides a foundational memory manager that reserves a 32-bit address space for the game.
     * Defines the `XenonState` structure to hold the state of all CPU registers.
-    * Contains entry points and stubs for many `XboxKrnl` and `Xam` API calls, though most are not yet implemented[cite: 6, 17, 264, 288].
+    * Contains entry points and stubs for many `XboxKrnl` and `Xam` API calls, though most are not yet implemented.
     * Includes a basic framework for a DirectX 12 graphics backend and an ImGui-based debugger.
 
 ## Building
 
--   Install the LLVM 19 libraries[cite: 12].
+-   Install the LLVM 19 libraries.
 -   Set the `LLVM_DIR_INST` variable in the root `CMakeLists.txt` to your LLVM installation path.
 -   Use CMake to generate a Visual Studio solution in the `/out` directory.
 -   Build the `LLVM360.sln` solution.
 
 ## Contributing
 
-Contributions are welcome! Please feel free to fork the repository and submit a Pull Request[cite: 13]. You can also join the project's [Discord server](https://discord.gg/JufwFS9mmf) to discuss development.
+Contributions are welcome! Please feel free to fork the repository and submit a Pull Request. You can also join the project's [Discord server](https://discord.gg/JufwFS9mmf) to discuss development.
