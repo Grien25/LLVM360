@@ -44,10 +44,19 @@ The project is currently in a foundational, experimental phase.
 ## Building
 
 -   Windows: Install the LLVM 19 libraries.
--   macOS: `brew install llvm` (CMake will auto-detect via `llvm-config`).
--   Set the `LLVM_DIR_INST` variable in the root `CMakeLists.txt` to your LLVM installation path.
+-   macOS (Homebrew): `brew install llvm` — this installs LLVM and LLD together.
+    - Prefer using the LLD that ships with the same LLVM install to avoid version mismatches.
+    - Example configure (Ninja):
+      - `-DLLVM_DIR=$(brew --prefix llvm)/lib/cmake/llvm`
+      - `-DLLD_DIR=$(brew --prefix llvm)/lib/cmake/lld`
+    - If you previously installed a versioned `lld@<ver>`, uninstall it or ensure it matches your LLVM version.
+-   Set the `LLVM_DIR_INST` variable in the root `CMakeLists.txt` to your LLVM installation path (Windows fallback).
 -   Use CMake to generate a Visual Studio solution in the `/out` directory.
 -   Build the `LLVM360.sln` solution.
+
+Notes:
+- This project requires LLD. CMake validates that the found LLD matches the detected LLVM installation and will fail configuration if it does not.
+- On macOS, avoid mixing `lld@19` with LLVM 21, etc. Always point both `LLVM_DIR` and `LLD_DIR` to the same Homebrew `llvm` prefix.
 
 ## Contributing
 

@@ -39,8 +39,9 @@ message(STATUS "Using LLVMConfig.cmake in: ${LLVM_DIR}")
 include_directories(${LLVM_INCLUDE_DIRS})
 add_definitions(${LLVM_DEFINITIONS})
 
-# LLD is optional; use if available
+# LLD is required for this project; ensure it matches LLVM
 option(LLVM360_USE_LLD "Attempt to use LLD if available" ON)
+option(LLVM360_REQUIRE_LLD "Fail configure if LLD is unavailable/mismatched" ON)
 set(HAVE_LLD FALSE)
 
 # Derive the LLVM install prefix from LLVM_DIR (e.g., .../lib/cmake)
@@ -80,7 +81,20 @@ if(LLVM360_USE_LLD)
     message(STATUS "Found LLD at ${LLD_DIR}")
     set(HAVE_LLD TRUE)
   else()
-    message(STATUS "LLD not found (matching LLVM prefix); continuing without LLD")
+    if(LLVM360_REQUIRE_LLD)
+      message(FATAL_ERROR "LLD is required but a matching LLD wasn't found.\n"
+        "Detected LLVM at '${_LLVM_PREFIX}'.\n"
+        "Tried LLD at: ${_LLD_HINTS}.\n\n"
+        "Fix suggestions:\n"
+        "- macOS (Homebrew): brew install llvm\n"
+        "  Then configure with:\n"
+        "    -DLLVM_DIR=$(brew --prefix llvm)/lib/cmake/llvm\n"
+        "    -DLLD_DIR=$(brew --prefix llvm)/lib/cmake/lld\n"
+        "- Avoid mixing versioned lld (e.g., lld@19) with LLVM ${LLVM_PACKAGE_VERSION}.\n"
+        "- Or set -DLLVM360_REQUIRE_LLD=OFF to bypass (not recommended).")
+    else()
+      message(STATUS "LLD not found (matching LLVM prefix); continuing without LLD")
+    endif()
   endif()
 endif()
 
