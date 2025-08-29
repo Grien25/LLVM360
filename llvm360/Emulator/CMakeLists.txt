@@ -22,9 +22,20 @@ SET(Graphics
     src/Graphics/ImGuiTest.h
     src/Graphics/ImGuiDebugger.h
     src/Graphics/ImGuiDebugger.cpp
+    src/Graphics/GraphicsBackend.h
+)
+
+if(WIN32)
+  list(APPEND Graphics
     src/Graphics/DX12Manager.h
     src/Graphics/DX12Manager.cpp
-)
+    src/Graphics/DX12BackendAdapter.h
+    src/Graphics/DX12BackendAdapter.cpp)
+elseif(APPLE)
+  list(APPEND Graphics
+    src/Graphics/PlumeBackendAdapter.h
+    src/Graphics/PlumeBackendAdapter.cpp)
+endif()
 
 SET(Runtime
     src/Runtime/Runtime.h
@@ -57,5 +68,7 @@ if(MSVC)
 endif()
 
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/src)
-target_link_libraries(Emulator PRIVATE d3d12 d3d11 dxgi dxguid)
+if(WIN32)
+  target_link_libraries(Emulator PRIVATE d3d12 d3d11 dxgi dxguid)
+endif()
 target_precompile_headers(Emulator PRIVATE src/pch.h)

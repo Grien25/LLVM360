@@ -3,13 +3,32 @@
 #include <stdio.h>
 #include <cstdint>
 #include <cassert>
-#include <windows.h>
+#if defined(_WIN32)
+#include <Windows.h>
+#endif
+#include <locale>
+#include <codecvt>
 #include "ImportTable.h"
 
 
 XexImage::XexImage(const wchar_t *path)
   : m_path(path) // Initialize path
 {
+}
+
+static FILE* wfopen_cross(const std::wstring& path, const wchar_t* mode)
+{
+#if defined(_WIN32)
+    FILE* f = nullptr;
+    _wfopen_s(&f, path.c_str(), mode);
+    return f;
+#else
+    // Convert wide strings to UTF-8 for POSIX fopen
+    std::wstring_convert<std::codecvt_utf8_utf16<wchar_t>> conv;
+    std::string u8path = conv.to_bytes(path);
+    std::string u8mode = conv.to_bytes(mode);
+    return fopen(u8path.c_str(), u8mode.c_str());
+#endif
 }
 
 bool XexImage::LoadXex() {
@@ -22,8 +41,7 @@ bool XexImage::LoadXex() {
     m_xexData = {};
 
   // open the file
-  FILE *f = nullptr;
-  _wfopen_s(&f, m_path.c_str(), L"rb");
+  FILE *f = wfopen_cross(m_path, L"rb");
 
   if (nullptr == f) {
     printf("Unable to open file '%ls'", m_path.c_str());

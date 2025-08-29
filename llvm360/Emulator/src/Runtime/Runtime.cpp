@@ -189,9 +189,11 @@ void XRuntime::init()
     allocateSectionsData();
     initImpVars();
     initMainThread(this);
-    
-	//m_graphics = new Graphics();
-    //m_graphics->initGraphics();
+    // Initialize graphics backend (DX12 on Windows, Metal via Plume on macOS)
+    m_graphics = CreateGraphicsBackend();
+    if (m_graphics) {
+        m_graphics->initialize();
+    }
 }
 
 

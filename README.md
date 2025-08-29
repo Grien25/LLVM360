@@ -39,11 +39,12 @@ The project is currently in a foundational, experimental phase.
     * Provides a foundational memory manager that reserves a 32-bit address space for the game.
     * Defines the `XenonState` structure to hold the state of all CPU registers.
     * Contains entry points and stubs for many `XboxKrnl` and `Xam` API calls, though most are not yet implemented.
-    * Includes a basic framework for a DirectX 12 graphics backend and an ImGui-based debugger.
+    * Graphics: Auto-selects backend per platform — DirectX 12 on Windows; Plume (Metal) planned on macOS. Current macOS backend is scaffolded for future Plume integration.
 
 ## Building
 
--   Install the LLVM 19 libraries.
+-   Windows: Install the LLVM 19 libraries.
+-   macOS: `brew install llvm` (CMake will auto-detect via `llvm-config`).
 -   Set the `LLVM_DIR_INST` variable in the root `CMakeLists.txt` to your LLVM installation path.
 -   Use CMake to generate a Visual Studio solution in the `/out` directory.
 -   Build the `LLVM360.sln` solution.

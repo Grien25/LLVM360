@@ -10,7 +10,9 @@
 #include <chrono>
 #include "IR/IRGenerator.h"
 #include <Xex/XexLoader.h>
+#if defined(_WIN32)
 #include <conio.h>  // for _kbhit
+#endif
 #include <IR/Unit/UnitTesting.h>
 #include <IR/IRFunc.h>
 

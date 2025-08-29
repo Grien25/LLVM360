@@ -1,3 +1,9 @@
 [submodule "external/imgui"]
 	path = external/imgui
 	url = https://github.com/ocornut/imgui.git
+[submodule "external/plume"]
+	path = external/plume
+	url = https://github.com/renderbag/plume.git
+[submodule "external/MarathonRecomp"]
+	path = external/MarathonRecomp
+	url = https://github.com/sonicnext-dev/MarathonRecomp.git

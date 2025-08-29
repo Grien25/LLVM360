@@ -1,7 +1,6 @@
 #include "Util.h"
-
-
-
+#include <locale>
+#include <codecvt>
 
 void SaveSectionToBin(const char* filename, const uint8_t* dataPtr, size_t dataSize)
 {
@@ -415,32 +414,32 @@ int main(int argc, char* argv[])
         return 1;
     }
 
-    std::string txtFilePath = argv[1];
-    std::ifstream file(txtFilePath);
-
-    if (!file.is_open()) 
+    // Accept either a single .xex path or a text file containing multiple paths (one per line)
+    std::string firstArg = argv[1];
+    std::ifstream maybeList(firstArg);
+    if (maybeList.is_open())
     {
-		LOG_FATAL("MAIN", "Error: Could not open file %s", txtFilePath.c_str());
-        return 1;
-    }
-
-    std::string line;
-    while (std::getline(file, line)) 
-    {
-        if (!line.empty()) 
+        std::string line;
+        while (std::getline(maybeList, line))
         {
-			LOG_INFO("MAIN", "Found file path: %s", line.c_str());
-			filePaths.push_back(line);
+            if (!line.empty())
+            {
+                LOG_INFO("MAIN", "Found file path: %s", line.c_str());
+                filePaths.push_back(line);
+            }
         }
+        maybeList.close();
     }
-    file.close();
+    else
+    {
+        // Treat argv[1] as a direct .xex path
+        filePaths.push_back(firstArg);
+    }
 
-
-
-
-
-
-    loadedXex = new XexImage(L"LLVMTest1.xex");
+    // Use the first provided path
+    std::wstring_convert<std::codecvt_utf8_utf16<wchar_t>> conv;
+    std::wstring wpath = conv.from_bytes(filePaths[0]);
+    loadedXex = new XexImage(wpath.c_str());
     loadedXex->LoadXex();
     g_irGen = new IRGenerator(loadedXex, mod, &builder);
     g_irGen->Initialize();
@@ -532,5 +531,4 @@ int main(int argc, char* argv[])
     printf("On dog  @.nover.\n");
 	printf("Gotta Go Fast  @neoslyde\n");
 }
-
 

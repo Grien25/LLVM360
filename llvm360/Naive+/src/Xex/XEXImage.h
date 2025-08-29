@@ -1,7 +1,7 @@
 #pragma once
 #include <cstdint>
 #include <stdio.h>
-#include <vcruntime_string.h>
+#include <cstring>
 #include <type_traits>
 #include <vector>
 

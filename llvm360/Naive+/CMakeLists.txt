@@ -83,12 +83,11 @@ llvm_map_components_to_libnames(LLVM_LIBS
   transformutils
 )
 
-#TEST
-# LLD libs (add path to lld libs if needed)
-set(LLD_LIBS
-  lldCommon
-  lldCOFF
-)
+# Optionally link LLD if available
+set(LLD_LIBS "")
+if(HAVE_LLD)
+  list(APPEND LLD_LIBS lldCommon lldCOFF)
+endif()
 
 llvm_map_components_to_libnames(LLVM_LIBS support core irreader bitwriter)
 target_link_libraries(Naive+ PRIVATE ${LLVM_LIBS} ${LLD_LIBS})

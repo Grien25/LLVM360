@@ -1,6 +1,6 @@
 #pragma once
 #include "../Runtime.h"
-#include "../..//Graphics/DX12Manager.h"
+#include "../../Graphics/GraphicsBackend.h"
 #include "../../Graphics/ImGuiDebugger.h"
 #include <cstdint>
 #include <type_traits>
@@ -296,7 +296,13 @@ extern "C"
 		if (!d3dinit)
 		{
 			XRuntime::g_runtime->debuggerEnabled = true;
-			DirectX12Manager& inst = DirectX12Manager::getInstance();
+			// Ensure graphics backend is available
+			if (!XRuntime::g_runtime->m_graphics) {
+				XRuntime::g_runtime->m_graphics = CreateGraphicsBackend();
+				if (XRuntime::g_runtime->m_graphics) {
+					XRuntime::g_runtime->m_graphics->initialize();
+				}
+			}
 			if (XRuntime::g_runtime->debuggerEnabled)
 			{
 

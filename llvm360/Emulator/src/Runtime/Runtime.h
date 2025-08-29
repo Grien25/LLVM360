@@ -1,7 +1,9 @@
 #pragma once
 #include <cstdint>
 #include <cstdio>
+#if defined(_WIN32)
 #include <windows.h>
+#endif
 #include <iostream>
 #include <iostream>
 #include <fstream>
@@ -10,6 +12,7 @@
 #include <string>
 #include <mutex>
 #include "../Graphics/ImGuiDebugger.h"
+#include "../Graphics/GraphicsBackend.h"
 
 class XAlloc;
 
@@ -139,9 +142,8 @@ public:
     bool debuggerEnabled;
     uint64_t* g_moduleBase;
 
-	//Graphics* m_graphics;
+    IGraphicsBackend* m_graphics;
     XAlloc* m_memory;
     static XRuntime* g_runtime;
     static void initGlobal();
 };
-
