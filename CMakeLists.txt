@@ -40,21 +40,48 @@ include_directories(${LLVM_INCLUDE_DIRS})
 add_definitions(${LLVM_DEFINITIONS})
 
 # LLD is optional; use if available
-if(NOT DEFINED LLD_DIR)
-  # Try to derive from LLVM_DIR
-  get_filename_component(_LLVM_PREFIX "${LLVM_DIR}/../.." ABSOLUTE)
-  if(EXISTS "${_LLVM_PREFIX}/lib/cmake/lld")
-    set(LLD_DIR "${_LLVM_PREFIX}/lib/cmake/lld" CACHE PATH "")
-  elseif(EXISTS "${LLVM_DIR_INST}/lib/cmake/lld")
-    set(LLD_DIR "${LLVM_DIR_INST}/lib/cmake/lld" CACHE PATH "")
+option(LLVM360_USE_LLD "Attempt to use LLD if available" ON)
+set(HAVE_LLD FALSE)
+
+# Derive the LLVM install prefix from LLVM_DIR (e.g., .../lib/cmake)
+get_filename_component(_LLVM_PREFIX "${LLVM_DIR}/../.." ABSOLUTE)
+
+if(LLVM360_USE_LLD)
+  # Build a curated list of candidate LLD cmake dirs that share the LLVM prefix
+  set(_LLD_HINTS)
+
+  if(DEFINED LLD_DIR)
+    # Accept common shapes of LLD_DIR input and normalize to cmake dir candidates
+    set(_CANDIDATES
+      "${LLD_DIR}"
+      "${LLD_DIR}/lib/cmake/lld"
+      "${LLD_DIR}/cmake/lld")
+    foreach(_C IN LISTS _CANDIDATES)
+      # Compare parent two dirs (../..) to the LLVM prefix (../.. of LLVM_DIR)
+      get_filename_component(_C_PREFIX "${_C}/../.." ABSOLUTE)
+      if(_C_PREFIX STREQUAL _LLVM_PREFIX)
+        list(APPEND _LLD_HINTS "${_C}")
+      else()
+        # Ignore user-provided LLD_DIR that doesn't match the LLVM prefix
+        # to avoid pulling in an incompatible lld (e.g., Homebrew lld@19)
+      endif()
+    endforeach()
+    if(_LLD_HINTS STREQUAL "")
+      message(STATUS "Ignoring LLD_DIR='${LLD_DIR}' (prefix mismatch vs LLVM at '${_LLVM_PREFIX}').")
+    endif()
   endif()
-endif()
-find_package(LLD CONFIG QUIET)
-if(LLD_FOUND)
-  message(STATUS "Found LLD at ${LLD_DIR}")
-  set(HAVE_LLD TRUE)
-else()
-  message(STATUS "LLD not found; continuing without LLD")
+
+  # Always prefer the LLD next to the detected LLVM
+  list(APPEND _LLD_HINTS "${_LLVM_PREFIX}/lib/cmake/lld")
+
+  # Only search in our curated hints; do not fall back to system defaults
+  find_package(LLD CONFIG QUIET NO_DEFAULT_PATH HINTS ${_LLD_HINTS})
+  if(LLD_FOUND)
+    message(STATUS "Found LLD at ${LLD_DIR}")
+    set(HAVE_LLD TRUE)
+  else()
+    message(STATUS "LLD not found (matching LLVM prefix); continuing without LLD")
+  endif()
 endif()
 
 # Platform-specific definitions

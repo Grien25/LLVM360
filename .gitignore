@@ -13,3 +13,4 @@
 *.exe
 *.dll
 /runtime/Runtime/.vs
+/.idea
