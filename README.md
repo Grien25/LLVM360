@@ -1,5 +1,7 @@
 # LLVM360
 
+## Code horrendous, does not work, please do not for my version!
+
 LLVM360 is an experimental static recompiler and runtime environment aiming to run Xbox 360 executables natively on PC. It leverages the LLVM compiler toolchain to translate PowerPC assembly into native x86-64 code.
 
 The project's core philosophy is to achieve high compatibility and accuracy through a **Low-Level Emulation (LLE)** approach for the console's kernel and operating system. Instead of reimplementing kernel functions from scratch (HLE), the goal is to recompile the original `xboxkrnl.exe` and other system modules to run them within a thin hardware abstraction layer.
