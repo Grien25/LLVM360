@@ -1,6 +1,7 @@
 #include "IRFunc.h"
 #include <sstream>
 #include <unordered_set>
+#include "../../common/Debug.h"
 
 
 
@@ -114,7 +115,7 @@ bool IRFunc::EmitFunction()
 
                 if (!m_irGen->EmitInstruction(m_irGen->instrsList.at(blockIdx), this))
                 {
-                    __debugbreak();
+                    DebugBreak();
                     return 1;
                 }
 

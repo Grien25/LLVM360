@@ -1,4 +1,5 @@
 #include "InstructionDecoder.h"
+#include "../../common/Debug.h"
 
 // Instruction Bit Field
 class IBF {
@@ -1365,7 +1366,7 @@ uint32_t InstructionDecoder::DecodeInstruction(const uint8_t *stride, Instructio
     }
 
     printf("UNABLE TO DECODE INSTRUCTION: opcode: %i\n", opcode);
-    __debugbreak();
+    DebugBreak();
     printf("Unknown instruction %08X\n", instr);
 
     return 0;

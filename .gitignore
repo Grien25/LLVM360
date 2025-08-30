@@ -17,3 +17,5 @@
 /private
 /build
 .DS_Store
+build-out.zip
+/.cache

@@ -40,62 +40,53 @@ include_directories(${LLVM_INCLUDE_DIRS})
 add_definitions(${LLVM_DEFINITIONS})
 
 # LLD is required for this project; ensure it matches LLVM
-option(LLVM360_USE_LLD "Attempt to use LLD if available" ON)
-option(LLVM360_REQUIRE_LLD "Fail configure if LLD is unavailable/mismatched" ON)
 set(HAVE_LLD FALSE)
 
 # Derive the LLVM install prefix from LLVM_DIR (e.g., .../lib/cmake)
 get_filename_component(_LLVM_PREFIX "${LLVM_DIR}/../.." ABSOLUTE)
 
-if(LLVM360_USE_LLD)
-  # Build a curated list of candidate LLD cmake dirs that share the LLVM prefix
-  set(_LLD_HINTS)
+# Build a curated list of candidate LLD cmake dirs that share the LLVM prefix
+set(_LLD_HINTS)
 
-  if(DEFINED LLD_DIR)
-    # Accept common shapes of LLD_DIR input and normalize to cmake dir candidates
-    set(_CANDIDATES
-      "${LLD_DIR}"
-      "${LLD_DIR}/lib/cmake/lld"
-      "${LLD_DIR}/cmake/lld")
-    foreach(_C IN LISTS _CANDIDATES)
-      # Compare parent two dirs (../..) to the LLVM prefix (../.. of LLVM_DIR)
-      get_filename_component(_C_PREFIX "${_C}/../.." ABSOLUTE)
-      if(_C_PREFIX STREQUAL _LLVM_PREFIX)
-        list(APPEND _LLD_HINTS "${_C}")
-      else()
-        # Ignore user-provided LLD_DIR that doesn't match the LLVM prefix
-        # to avoid pulling in an incompatible lld (e.g., Homebrew lld@19)
-      endif()
-    endforeach()
-    if(_LLD_HINTS STREQUAL "")
-      message(STATUS "Ignoring LLD_DIR='${LLD_DIR}' (prefix mismatch vs LLVM at '${_LLVM_PREFIX}').")
-    endif()
-  endif()
-
-  # Always prefer the LLD next to the detected LLVM
-  list(APPEND _LLD_HINTS "${_LLVM_PREFIX}/lib/cmake/lld")
-
-  # Only search in our curated hints; do not fall back to system defaults
-  find_package(LLD CONFIG QUIET NO_DEFAULT_PATH HINTS ${_LLD_HINTS})
-  if(LLD_FOUND)
-    message(STATUS "Found LLD at ${LLD_DIR}")
-    set(HAVE_LLD TRUE)
-  else()
-    if(LLVM360_REQUIRE_LLD)
-      message(FATAL_ERROR "LLD is required but a matching LLD wasn't found.\n"
-        "Detected LLVM at '${_LLVM_PREFIX}'.\n"
-        "Tried LLD at: ${_LLD_HINTS}.\n\n"
-        "Fix suggestions:\n"
-        "- macOS (Homebrew): brew install llvm\n"
-        "  Then configure with:\n"
-        "    -DLLVM_DIR=$(brew --prefix llvm)/lib/cmake/llvm\n"
-        "    -DLLD_DIR=$(brew --prefix llvm)/lib/cmake/lld\n"
-        "- Avoid mixing versioned lld (e.g., lld@19) with LLVM ${LLVM_PACKAGE_VERSION}.\n"
-        "- Or set -DLLVM360_REQUIRE_LLD=OFF to bypass (not recommended).")
+if(DEFINED LLD_DIR)
+  # Accept common shapes of LLD_DIR input and normalize to cmake dir candidates
+  set(_CANDIDATES
+    "${LLD_DIR}"
+    "${LLD_DIR}/lib/cmake/lld"
+    "${LLD_DIR}/cmake/lld")
+  foreach(_C IN LISTS _CANDIDATES)
+    # Compare parent two dirs (../..) to the LLVM prefix (../.. of LLVM_DIR)
+    get_filename_component(_C_PREFIX "${_C}/../.." ABSOLUTE)
+    if(_C_PREFIX STREQUAL _LLVM_PREFIX)
+      list(APPEND _LLD_HINTS "${_C}")
     else()
-      message(STATUS "LLD not found (matching LLVM prefix); continuing without LLD")
+      # Ignore user-provided LLD_DIR that doesn't match the LLVM prefix
+      # to avoid pulling in an incompatible lld (e.g., Homebrew lld@19)
     endif()
+  endforeach()
+  if(_LLD_HINTS STREQUAL "")
+    message(STATUS "Ignoring LLD_DIR='${LLD_DIR}' (prefix mismatch vs LLVM at '${_LLVM_PREFIX}').")
   endif()
+endif()
+
+# Always prefer the LLD next to the detected LLVM
+list(APPEND _LLD_HINTS "${_LLVM_PREFIX}/lib/cmake/lld")
+
+# Only search in our curated hints; do not fall back to system defaults
+find_package(LLD CONFIG QUIET NO_DEFAULT_PATH HINTS ${_LLD_HINTS})
+if(LLD_FOUND)
+  message(STATUS "Found LLD at ${LLD_DIR}")
+  set(HAVE_LLD TRUE)
+else()
+  message(FATAL_ERROR "LLD is required but a matching LLD wasn't found.\n"
+    "Detected LLVM at '${_LLVM_PREFIX}'.\n"
+    "Tried LLD at: ${_LLD_HINTS}.\n\n"
+    "Fix suggestions:\n"
+    "- macOS (Homebrew): brew install llvm\n"
+    "  Then configure with:\n"
+    "    -DLLVM_DIR=$(brew --prefix llvm)/lib/cmake/llvm\n"
+    "    -DLLD_DIR=$(brew --prefix llvm)/lib/cmake/lld\n"
+    "- Avoid mixing versioned lld (e.g., lld@19) with LLVM ${LLVM_PACKAGE_VERSION}.\n")
 endif()
 
 # Platform-specific definitions

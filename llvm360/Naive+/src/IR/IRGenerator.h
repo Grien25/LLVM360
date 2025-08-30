@@ -12,14 +12,7 @@
 
 #include "Xex/XexLoader.h"
 #include "Decoder/Instruction.h"
-#if defined(_WIN32)
-#include <Windows.h>
-#else
-// Provide a DebugBreak equivalent on non-Windows platforms
-#ifndef DebugBreak
-#define DebugBreak() __builtin_trap()
-#endif
-#endif
+#include "../../common/Debug.h"
 #include <map>
 
 class IRFunc;
@@ -76,4 +69,3 @@ public:
   std::unordered_map<uint32_t, IRFunc*> m_function_map;
   std::unordered_map<uint32_t, Instruction> instrsList;
 };
-
