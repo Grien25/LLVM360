@@ -14,3 +14,6 @@
 *.dll
 /runtime/Runtime/.vs
 /.idea
+/private
+/build
+.DS_Store

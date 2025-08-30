@@ -1,0 +1,44 @@
+[
+{
+  "directory": "/Users/riengupta/Documents/GitHub/RenderDoc_MCP/llvm360/build/llvm360/Naive+",
+  "command": "/usr/bin/c++  -I/usr/local/Cellar/llvm/21.1.0/include -I/Users/riengupta/Documents/GitHub/RenderDoc_MCP/llvm360/llvm360/Naive+/src -std=gnu++20 -arch x86_64   -DEXPERIMENTAL_KEY_INSTRUCTIONS -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -o CMakeFiles/Naive+.dir/src/LLVM360.cpp.o -c /Users/riengupta/Documents/GitHub/RenderDoc_MCP/llvm360/llvm360/Naive+/src/LLVM360.cpp",
+  "file": "/Users/riengupta/Documents/GitHub/RenderDoc_MCP/llvm360/llvm360/Naive+/src/LLVM360.cpp",
+  "output": "llvm360/Naive+/CMakeFiles/Naive+.dir/src/LLVM360.cpp.o"
+},
+{
+  "directory": "/Users/riengupta/Documents/GitHub/RenderDoc_MCP/llvm360/build/llvm360/Naive+",
+  "command": "/usr/bin/c++  -I/usr/local/Cellar/llvm/21.1.0/include -I/Users/riengupta/Documents/GitHub/RenderDoc_MCP/llvm360/llvm360/Naive+/src -std=gnu++20 -arch x86_64   -DEXPERIMENTAL_KEY_INSTRUCTIONS -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -o CMakeFiles/Naive+.dir/src/Xex/XexLoader.cpp.o -c /Users/riengupta/Documents/GitHub/RenderDoc_MCP/llvm360/llvm360/Naive+/src/Xex/XexLoader.cpp",
+  "file": "/Users/riengupta/Documents/GitHub/RenderDoc_MCP/llvm360/llvm360/Naive+/src/Xex/XexLoader.cpp",
+  "output": "llvm360/Naive+/CMakeFiles/Naive+.dir/src/Xex/XexLoader.cpp.o"
+},
+{
+  "directory": "/Users/riengupta/Documents/GitHub/RenderDoc_MCP/llvm360/build/llvm360/Naive+",
+  "command": "/usr/bin/c++  -I/usr/local/Cellar/llvm/21.1.0/include -I/Users/riengupta/Documents/GitHub/RenderDoc_MCP/llvm360/llvm360/Naive+/src -std=gnu++20 -arch x86_64   -DEXPERIMENTAL_KEY_INSTRUCTIONS -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -o CMakeFiles/Naive+.dir/src/Xex/AES.cpp.o -c /Users/riengupta/Documents/GitHub/RenderDoc_MCP/llvm360/llvm360/Naive+/src/Xex/AES.cpp",
+  "file": "/Users/riengupta/Documents/GitHub/RenderDoc_MCP/llvm360/llvm360/Naive+/src/Xex/AES.cpp",
+  "output": "llvm360/Naive+/CMakeFiles/Naive+.dir/src/Xex/AES.cpp.o"
+},
+{
+  "directory": "/Users/riengupta/Documents/GitHub/RenderDoc_MCP/llvm360/build/llvm360/Naive+",
+  "command": "/usr/bin/c++  -I/usr/local/Cellar/llvm/21.1.0/include -I/Users/riengupta/Documents/GitHub/RenderDoc_MCP/llvm360/llvm360/Naive+/src -std=gnu++20 -arch x86_64   -DEXPERIMENTAL_KEY_INSTRUCTIONS -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -o CMakeFiles/Naive+.dir/src/misc/Utils.cpp.o -c /Users/riengupta/Documents/GitHub/RenderDoc_MCP/llvm360/llvm360/Naive+/src/misc/Utils.cpp",
+  "file": "/Users/riengupta/Documents/GitHub/RenderDoc_MCP/llvm360/llvm360/Naive+/src/misc/Utils.cpp",
+  "output": "llvm360/Naive+/CMakeFiles/Naive+.dir/src/misc/Utils.cpp.o"
+},
+{
+  "directory": "/Users/riengupta/Documents/GitHub/RenderDoc_MCP/llvm360/build/llvm360/Naive+",
+  "command": "/usr/bin/c++  -I/usr/local/Cellar/llvm/21.1.0/include -I/Users/riengupta/Documents/GitHub/RenderDoc_MCP/llvm360/llvm360/Naive+/src -std=gnu++20 -arch x86_64   -DEXPERIMENTAL_KEY_INSTRUCTIONS -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -o CMakeFiles/Naive+.dir/src/Decoder/InstructionDecoder.cpp.o -c /Users/riengupta/Documents/GitHub/RenderDoc_MCP/llvm360/llvm360/Naive+/src/Decoder/InstructionDecoder.cpp",
+  "file": "/Users/riengupta/Documents/GitHub/RenderDoc_MCP/llvm360/llvm360/Naive+/src/Decoder/InstructionDecoder.cpp",
+  "output": "llvm360/Naive+/CMakeFiles/Naive+.dir/src/Decoder/InstructionDecoder.cpp.o"
+},
+{
+  "directory": "/Users/riengupta/Documents/GitHub/RenderDoc_MCP/llvm360/build/llvm360/Naive+",
+  "command": "/usr/bin/c++  -I/usr/local/Cellar/llvm/21.1.0/include -I/Users/riengupta/Documents/GitHub/RenderDoc_MCP/llvm360/llvm360/Naive+/src -std=gnu++20 -arch x86_64   -DEXPERIMENTAL_KEY_INSTRUCTIONS -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -o CMakeFiles/Naive+.dir/src/IR/IRFunc.cpp.o -c /Users/riengupta/Documents/GitHub/RenderDoc_MCP/llvm360/llvm360/Naive+/src/IR/IRFunc.cpp",
+  "file": "/Users/riengupta/Documents/GitHub/RenderDoc_MCP/llvm360/llvm360/Naive+/src/IR/IRFunc.cpp",
+  "output": "llvm360/Naive+/CMakeFiles/Naive+.dir/src/IR/IRFunc.cpp.o"
+},
+{
+  "directory": "/Users/riengupta/Documents/GitHub/RenderDoc_MCP/llvm360/build/llvm360/Naive+",
+  "command": "/usr/bin/c++  -I/usr/local/Cellar/llvm/21.1.0/include -I/Users/riengupta/Documents/GitHub/RenderDoc_MCP/llvm360/llvm360/Naive+/src -std=gnu++20 -arch x86_64   -DEXPERIMENTAL_KEY_INSTRUCTIONS -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -o CMakeFiles/Naive+.dir/src/IR/IRGenerator.cpp.o -c /Users/riengupta/Documents/GitHub/RenderDoc_MCP/llvm360/llvm360/Naive+/src/IR/IRGenerator.cpp",
+  "file": "/Users/riengupta/Documents/GitHub/RenderDoc_MCP/llvm360/llvm360/Naive+/src/IR/IRGenerator.cpp",
+  "output": "llvm360/Naive+/CMakeFiles/Naive+.dir/src/IR/IRGenerator.cpp.o"
+}
+]
