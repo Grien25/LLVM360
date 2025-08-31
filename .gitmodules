@@ -7,3 +7,12 @@
 [submodule "external/MarathonRecomp"]
 	path = external/MarathonRecomp
 	url = https://github.com/sonicnext-dev/MarathonRecomp.git
+[submodule "external/xenia-canary"]
+	path = external/xenia-canary
+	url = https://github.com/xenia-canary/xenia-canary.git
+[submodule "external/xenon"]
+	path = external/xenon
+	url = https://github.com/xenon-emu/xenon.git
+[submodule "external/Xbox360Docs"]
+	path = external/Xbox360Docs
+	url = https://github.com/Grien25/Xbox360Docs.git
