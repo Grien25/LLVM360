@@ -19,3 +19,6 @@
 .DS_Store
 build-out.zip
 /.cache
+/cmake-build-debug-arm64
+/cmake-build-debug-x64
+AGENTS.md

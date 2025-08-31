@@ -40,7 +40,7 @@ Section* findSection(std::string name)
         }
     }
 
-    printf("No Section with name: s& found", name);
+    printf("No Section with name: %s found\n", name.c_str());
     return nullptr;
 }
 
@@ -531,4 +531,3 @@ int main(int argc, char* argv[])
     printf("On dog  @.nover.\n");
 	printf("Gotta Go Fast  @neoslyde\n");
 }
-

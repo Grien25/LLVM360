@@ -16,6 +16,20 @@ XexImage::XexImage(const wchar_t *path)
 {
 }
 
+#ifndef IMAGE_SUBSYSTEM_XBOX
+#define IMAGE_SUBSYSTEM_XBOX 14
+#endif
+
+#ifndef IMAGE_SCN_MEM_READ
+#define IMAGE_SCN_MEM_READ 0x40000000
+#endif
+#ifndef IMAGE_SCN_MEM_WRITE
+#define IMAGE_SCN_MEM_WRITE 0x80000000
+#endif
+#ifndef IMAGE_SCN_MEM_EXECUTE
+#define IMAGE_SCN_MEM_EXECUTE 0x20000000
+#endif
+
 static FILE* wfopen_cross(const std::wstring& path, const wchar_t* mode)
 {
 #if defined(_WIN32)
@@ -839,7 +853,7 @@ bool XexImage::PatchImports()
             if (impV->name.empty())
             {
                 char autoExportName[256];
-                sprintf_s(autoExportName, 256, "Export%d", importOrdinal);
+                snprintf(autoExportName, sizeof(autoExportName), "Export%d", importOrdinal);
                 impV->name = autoExportName;
             }
 
@@ -872,7 +886,7 @@ bool XexImage::PatchImports()
             if (imp->name.empty())
             {
                 char autoExportName[256];
-                sprintf_s(autoExportName, 256, "Export%d", importOrdinal);
+                snprintf(autoExportName, sizeof(autoExportName), "Export%d", importOrdinal);
                 imp->name = autoExportName;
             }
 

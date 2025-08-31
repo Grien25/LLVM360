@@ -53,15 +53,17 @@ static inline Import* findImport_FromLib(std::string libName, uint32_t ordinal)
 
     if(!libFound)
     {
-        printf("No Lib with name: s% found\n", libName);
+        printf("No Lib with name: %s found\n", libName.c_str());
         return nullptr;
     }
 
     if (!ordFound)
     {
-        printf("No Import in Lib: s% with ordinal i% found\n", libName.c_str(), ordinal);
+        printf("No Import in Lib: %s with ordinal %u found\n", libName.c_str(), ordinal);
         return nullptr;
     }
+
+    return nullptr;
 }
 
 

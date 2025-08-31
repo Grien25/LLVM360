@@ -61,6 +61,7 @@ set(SRC
 
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/src)
 add_executable(Naive+ ${SRC})
+target_compile_definitions(Naive+ PRIVATE DISABLE_DEBUGBREAK=1)
 
 
 # List of LLVM libs you need:

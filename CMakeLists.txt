@@ -42,37 +42,34 @@ add_definitions(${LLVM_DEFINITIONS})
 # LLD is required for this project; ensure it matches LLVM
 set(HAVE_LLD FALSE)
 
-# Derive the LLVM install prefix from LLVM_DIR (e.g., .../lib/cmake)
-get_filename_component(_LLVM_PREFIX "${LLVM_DIR}/../.." ABSOLUTE)
+# Derive the LLVM install prefix from LLVM_DIR (…/lib/cmake/llvm → prefix)
+get_filename_component(_LLVM_PREFIX "${LLVM_DIR}/../../.." ABSOLUTE)
 
-# Build a curated list of candidate LLD cmake dirs that share the LLVM prefix
+# Build a curated list of candidate LLD cmake dirs; rely on LLD's own
+# LLVM version check (EXACT) to prevent mismatches rather than prefix
+# heuristics. This supports separate Homebrew formulas (llvm + lld).
 set(_LLD_HINTS)
 
+# Respect user-provided LLD_DIR in common shapes
 if(DEFINED LLD_DIR)
-  # Accept common shapes of LLD_DIR input and normalize to cmake dir candidates
-  set(_CANDIDATES
+  list(APPEND _LLD_HINTS
     "${LLD_DIR}"
     "${LLD_DIR}/lib/cmake/lld"
     "${LLD_DIR}/cmake/lld")
-  foreach(_C IN LISTS _CANDIDATES)
-    # Compare parent two dirs (../..) to the LLVM prefix (../.. of LLVM_DIR)
-    get_filename_component(_C_PREFIX "${_C}/../.." ABSOLUTE)
-    if(_C_PREFIX STREQUAL _LLVM_PREFIX)
-      list(APPEND _LLD_HINTS "${_C}")
-    else()
-      # Ignore user-provided LLD_DIR that doesn't match the LLVM prefix
-      # to avoid pulling in an incompatible lld (e.g., Homebrew lld@19)
-    endif()
-  endforeach()
-  if(_LLD_HINTS STREQUAL "")
-    message(STATUS "Ignoring LLD_DIR='${LLD_DIR}' (prefix mismatch vs LLVM at '${_LLVM_PREFIX}').")
-  endif()
 endif()
 
-# Always prefer the LLD next to the detected LLVM
+# Prefer an LLD installed alongside the detected LLVM prefix
 list(APPEND _LLD_HINTS "${_LLVM_PREFIX}/lib/cmake/lld")
 
-# Only search in our curated hints; do not fall back to system defaults
+# Common Homebrew prefixes for llvm and lld (unversioned)
+list(APPEND _LLD_HINTS
+  "/opt/homebrew/opt/llvm/lib/cmake/lld"
+  "/usr/local/opt/llvm/lib/cmake/lld"
+  "/opt/homebrew/opt/lld/lib/cmake/lld"
+  "/usr/local/opt/lld/lib/cmake/lld")
+
+# Search only in our curated hints; version compatibility is enforced by
+# LLD's own find_package(LLVM … EXACT) inside LLDConfig.cmake.
 find_package(LLD CONFIG QUIET NO_DEFAULT_PATH HINTS ${_LLD_HINTS})
 if(LLD_FOUND)
   message(STATUS "Found LLD at ${LLD_DIR}")
@@ -82,11 +79,12 @@ else()
     "Detected LLVM at '${_LLVM_PREFIX}'.\n"
     "Tried LLD at: ${_LLD_HINTS}.\n\n"
     "Fix suggestions:\n"
-    "- macOS (Homebrew): brew install llvm\n"
+    "- macOS (Homebrew): brew install llvm lld\n"
     "  Then configure with:\n"
     "    -DLLVM_DIR=$(brew --prefix llvm)/lib/cmake/llvm\n"
-    "    -DLLD_DIR=$(brew --prefix llvm)/lib/cmake/lld\n"
-    "- Avoid mixing versioned lld (e.g., lld@19) with LLVM ${LLVM_PACKAGE_VERSION}.\n")
+    "    -DLLD_DIR=$(brew --prefix lld)/lib/cmake/lld\n"
+    "  (or use the lld that ships with llvm if present)\n"
+    "- Ensure LLD matches LLVM ${LLVM_PACKAGE_VERSION}.\n")
 endif()
 
 # Platform-specific definitions

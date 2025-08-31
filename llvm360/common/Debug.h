@@ -32,3 +32,7 @@
   #endif
 #endif
 
+#ifdef DISABLE_DEBUGBREAK
+#undef DebugBreak
+#define DebugBreak() ((void)0)
+#endif
