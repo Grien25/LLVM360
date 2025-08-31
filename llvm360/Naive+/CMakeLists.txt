@@ -84,10 +84,20 @@ llvm_map_components_to_libnames(LLVM_LIBS
   transformutils
 )
 
-# Optionally link LLD if available
+# Optionally link LLD if available. Keep platform frontends as opt-in so we retain
+# capability without forcing extra deps on all platforms.
 set(LLD_LIBS "")
 if(HAVE_LLD)
-  list(APPEND LLD_LIBS lldCommon lldCOFF)
+  option(EMBED_LLD_FRONTEND "Link against an LLD platform frontend" OFF)
+  if(EMBED_LLD_FRONTEND)
+    if(WIN32)
+      list(APPEND LLD_LIBS lldCommon lldCOFF)
+    elseif(APPLE)
+      list(APPEND LLD_LIBS lldCommon lldMachO)
+    else()
+      list(APPEND LLD_LIBS lldCommon lldELF)
+    endif()
+  endif()
 endif()
 
 llvm_map_components_to_libnames(LLVM_LIBS support core irreader bitwriter)

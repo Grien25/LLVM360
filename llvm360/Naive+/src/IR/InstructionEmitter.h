@@ -543,7 +543,7 @@ inline void extsb_e(Instruction instr, IRFunc* func)
 inline void cmpli_e(Instruction instr, IRFunc* func)
 {
     llvm::Value* a;
-    if(instr.ops[1] = 0)
+    if (instr.ops[1] == 0)
     {
         llvm::Value* low32Bits = trcTo32(gprVal(instr.ops[2]));
         a = zExt64(low32Bits);

@@ -22,3 +22,5 @@ build-out.zip
 /cmake-build-debug-arm64
 /cmake-build-debug-x64
 AGENTS.md
+/cmake-build-debug
+.vscode/settings.json

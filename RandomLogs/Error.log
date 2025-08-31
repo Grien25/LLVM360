@@ -1,0 +1,1312 @@
+====================[ Build | all | Debug ]=====================================
+/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake --build /Users/riengupta/Documents/GitHub/RenderDoc_MCP/llvm360/cmake-build-debug --target all -j 6
+[4/8] Building CXX object llvm360/Naive+/CMakeFiles/Naive+.dir/src/Xex/XexLoader.cpp.o
+/Users/riengupta/Documents/GitHub/RenderDoc_MCP/llvm360/llvm360/Naive+/src/Xex/XexLoader.cpp:41:31: warning: 'codecvt_utf8_utf16<wchar_t>' is deprecated [-Wdeprecated-declarations]
+   41 |     std::wstring_convert<std::codecvt_utf8_utf16<wchar_t>> conv;
+      |                               ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX15.4.sdk/usr/include/c++/v1/codecvt:568:28: note: 'codecvt_utf8_utf16<wchar_t>' has been explicitly marked deprecated here
+  568 | class _LIBCPP_TEMPLATE_VIS _LIBCPP_DEPRECATED_IN_CXX17 codecvt_utf8_utf16 : public __codecvt_utf8_utf16<_Elem> {
+      |                            ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX15.4.sdk/usr/include/c++/v1/__config:731:41: note: expanded from macro '_LIBCPP_DEPRECATED_IN_CXX17'
+  731 | #    define _LIBCPP_DEPRECATED_IN_CXX17 _LIBCPP_DEPRECATED
+      |                                         ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX15.4.sdk/usr/include/c++/v1/__config:696:49: note: expanded from macro '_LIBCPP_DEPRECATED'
+  696 | #      define _LIBCPP_DEPRECATED __attribute__((__deprecated__))
+      |                                                 ^
+/Users/riengupta/Documents/GitHub/RenderDoc_MCP/llvm360/llvm360/Naive+/src/Xex/XexLoader.cpp:41:10: warning: 'wstring_convert<std::codecvt_utf8_utf16<wchar_t>>' is deprecated [-Wdeprecated-declarations]
+   41 |     std::wstring_convert<std::codecvt_utf8_utf16<wchar_t>> conv;
+      |          ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX15.4.sdk/usr/include/c++/v1/locale:3145:28: note: 'wstring_convert<std::codecvt_utf8_utf16<wchar_t>>' has been explicitly marked deprecated here
+ 3145 | class _LIBCPP_TEMPLATE_VIS _LIBCPP_DEPRECATED_IN_CXX17 wstring_convert {
+      |                            ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX15.4.sdk/usr/include/c++/v1/__config:731:41: note: expanded from macro '_LIBCPP_DEPRECATED_IN_CXX17'
+  731 | #    define _LIBCPP_DEPRECATED_IN_CXX17 _LIBCPP_DEPRECATED
+      |                                         ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX15.4.sdk/usr/include/c++/v1/__config:696:49: note: expanded from macro '_LIBCPP_DEPRECATED'
+  696 | #      define _LIBCPP_DEPRECATED __attribute__((__deprecated__))
+      |                                                 ^
+/Users/riengupta/Documents/GitHub/RenderDoc_MCP/llvm360/llvm360/Naive+/src/Xex/XexLoader.cpp:126:11: warning: enumeration value 'XEX_COMPRESSION_DELTA' not handled in switch [-Wswitch]
+  126 |   switch (compType) {
+      |           ^~~~~~~~
+/Users/riengupta/Documents/GitHub/RenderDoc_MCP/llvm360/llvm360/Naive+/src/Xex/XexLoader.cpp:126:11: note: add missing switch cases
+  126 |   switch (compType) {
+      |           ^
+/Users/riengupta/Documents/GitHub/RenderDoc_MCP/llvm360/llvm360/Naive+/src/Xex/XexLoader.cpp:771:31: warning: length modifier 'h' results in undefined behavior or no effect with 's' conversion specifier [-Wformat]
+  771 |         printf("PE: Section '%hs' lies outside any phyisical data we have %d (size %d)\n",
+      |                              ~^~
+/Users/riengupta/Documents/GitHub/RenderDoc_MCP/llvm360/llvm360/Naive+/src/Xex/XexLoader.cpp:781:39: warning: length modifier 'h' results in undefined behavior or no effect with 's' conversion specifier [-Wformat]
+  781 |         printf("PE: Copying section '%hs' directly from raw file from offset %d (size %d)\n",
+      |                                      ~^~
+/Users/riengupta/Documents/GitHub/RenderDoc_MCP/llvm360/llvm360/Naive+/src/Xex/XexLoader.cpp:822:65: warning: format specifies type 'unsigned int' but the argument has type 'uint64_t' (aka 'unsigned long long') [-Wformat]
+  822 |             printf("XEX: invalid import record offset: 0x%X\n", memOffset);
+      |                                                          ~~     ^~~~~~~~~
+      |                                                          %llX
+/Users/riengupta/Documents/GitHub/RenderDoc_MCP/llvm360/llvm360/Naive+/src/Xex/XexLoader.cpp:839:96: warning: format specifies type 'int' but the argument has type 'size_type' (aka 'unsigned long') [-Wformat]
+  839 |                 printf("XEX: invalid import type 0 record lib index (%d, max:%d)\n", libIndex, m_libNames.size());
+      |                                                                              ~~                ^~~~~~~~~~~~~~~~~
+      |                                                                              %zu
+/Users/riengupta/Documents/GitHub/RenderDoc_MCP/llvm360/llvm360/Naive+/src/Xex/XexLoader.cpp:872:96: warning: format specifies type 'int' but the argument has type 'size_type' (aka 'unsigned long') [-Wformat]
+  872 |                 printf("XEX: invalid import type 1 record lib index (%d, max:%d)\n", libIndex, m_libNames.size());
+      |                                                                              ~~                ^~~~~~~~~~~~~~~~~
+      |                                                                              %zu
+8 warnings generated.
+[5/8] Building CXX object llvm360/Naive+/CMakeFiles/Naive+.dir/src/IR/IRFunc.cpp.o
+/Users/riengupta/Documents/GitHub/RenderDoc_MCP/llvm360/llvm360/Naive+/src/IR/IRFunc.cpp:143:119: warning: 'getPointerTo' is deprecated: Use PointerType::get instead [-Wdeprecated-declarations]
+  143 |     llvm::FunctionType* mainType = llvm::FunctionType::get(m_irGen->m_builder->getVoidTy(), {m_irGen->XenonStateType->getPointerTo(), m_irGen->m_builder->getInt32Ty()}, false);
+      |                                                                                                                       ^~~~~~~~~~~~
+      |                                                                                                                       PointerType::get
+/usr/local/Cellar/llvm/21.1.0/include/llvm/IR/Type.h:484:12: note: 'getPointerTo' has been explicitly marked deprecated here
+  484 |   LLVM_ABI LLVM_DEPRECATED("Use PointerType::get instead", "PointerType::get")
+      |            ^
+/usr/local/Cellar/llvm/21.1.0/include/llvm/Support/Compiler.h:250:50: note: expanded from macro 'LLVM_DEPRECATED'
+  250 | #define LLVM_DEPRECATED(MSG, FIX) __attribute__((deprecated(MSG, FIX)))
+      |                                                  ^
+1 warning generated.
+[6/8] Building CXX object llvm360/Naive+/CMakeFiles/Naive+.dir/src/LLVM360.cpp.o
+In file included from /Users/riengupta/Documents/GitHub/RenderDoc_MCP/llvm360/llvm360/Naive+/src/LLVM360.cpp:1:
+In file included from /Users/riengupta/Documents/GitHub/RenderDoc_MCP/llvm360/llvm360/Naive+/src/Util.h:16:
+In file included from /Users/riengupta/Documents/GitHub/RenderDoc_MCP/llvm360/llvm360/Naive+/src/IR/Unit/UnitTesting.h:2:
+/Users/riengupta/Documents/GitHub/RenderDoc_MCP/llvm360/llvm360/Naive+/src/IR/InstructionEmitter.h:229:69: warning: 'getPointerTo' is deprecated: Use PointerType::get instead [-Wdeprecated-declarations]
+  229 |     return BUILD->CreateIntToPtr(guestToHost(func, guestEa), i64_T->getPointerTo(), "addrPtr");
+      |                                                                     ^~~~~~~~~~~~
+      |                                                                     PointerType::get
+/usr/local/Cellar/llvm/21.1.0/include/llvm/IR/Type.h:484:12: note: 'getPointerTo' has been explicitly marked deprecated here
+  484 |   LLVM_ABI LLVM_DEPRECATED("Use PointerType::get instead", "PointerType::get")
+      |            ^
+/usr/local/Cellar/llvm/21.1.0/include/llvm/Support/Compiler.h:250:50: note: expanded from macro 'LLVM_DEPRECATED'
+  250 | #define LLVM_DEPRECATED(MSG, FIX) __attribute__((deprecated(MSG, FIX)))
+      |                                                  ^
+In file included from /Users/riengupta/Documents/GitHub/RenderDoc_MCP/llvm360/llvm360/Naive+/src/LLVM360.cpp:1:
+In file included from /Users/riengupta/Documents/GitHub/RenderDoc_MCP/llvm360/llvm360/Naive+/src/Util.h:16:
+In file included from /Users/riengupta/Documents/GitHub/RenderDoc_MCP/llvm360/llvm360/Naive+/src/IR/Unit/UnitTesting.h:2:
+/Users/riengupta/Documents/GitHub/RenderDoc_MCP/llvm360/llvm360/Naive+/src/IR/InstructionEmitter.h:861:49: warning: 'getDeclaration' is deprecated: Use getOrInsertDeclaration instead [-Wdeprecated-declarations]
+  861 |     llvm::Function* CtlzFunc = llvm::Intrinsic::getDeclaration(func->m_irGen->m_module, llvm::Intrinsic::ctlz, { i32_T });
+      |                                                 ^~~~~~~~~~~~~~
+      |                                                 getOrInsertDeclaration
+/usr/local/Cellar/llvm/21.1.0/include/llvm/IR/Intrinsics.h:107:3: note: 'getDeclaration' has been explicitly marked deprecated here
+  107 |   LLVM_DEPRECATED("Use getOrInsertDeclaration instead",
+      |   ^
+/usr/local/Cellar/llvm/21.1.0/include/llvm/Support/Compiler.h:250:50: note: expanded from macro 'LLVM_DEPRECATED'
+  250 | #define LLVM_DEPRECATED(MSG, FIX) __attribute__((deprecated(MSG, FIX)))
+      |                                                  ^
+/Users/riengupta/Documents/GitHub/RenderDoc_MCP/llvm360/llvm360/Naive+/src/LLVM360.cpp:204:130: warning: 'getPointerTo' is deprecated: Use PointerType::get instead [-Wdeprecated-declarations]
+  204 |             llvm::FunctionType* importType = llvm::FunctionType::get(g_irGen->m_builder->getVoidTy(), { g_irGen->XenonStateType->getPointerTo(), g_irGen->m_builder->getInt32Ty() }, false);
+      |                                                                                                                                  ^~~~~~~~~~~~
+      |                                                                                                                                  PointerType::get
+/usr/local/Cellar/llvm/21.1.0/include/llvm/IR/Type.h:484:12: note: 'getPointerTo' has been explicitly marked deprecated here
+  484 |   LLVM_ABI LLVM_DEPRECATED("Use PointerType::get instead", "PointerType::get")
+      |            ^
+/usr/local/Cellar/llvm/21.1.0/include/llvm/Support/Compiler.h:250:50: note: expanded from macro 'LLVM_DEPRECATED'
+  250 | #define LLVM_DEPRECATED(MSG, FIX) __attribute__((deprecated(MSG, FIX)))
+      |                                                  ^
+/Users/riengupta/Documents/GitHub/RenderDoc_MCP/llvm360/llvm360/Naive+/src/LLVM360.cpp:319:66: warning: format specifies type 'unsigned int' but the argument has type 'uint64_t' (aka 'unsigned long long') [-Wformat]
+  319 |                 printf("Failed to decode instruction at %08X\n", address);
+      |                                                         ~~~~     ^~~~~~~
+      |                                                         %08llX
+/Users/riengupta/Documents/GitHub/RenderDoc_MCP/llvm360/llvm360/Naive+/src/LLVM360.cpp:440:31: warning: 'codecvt_utf8_utf16<wchar_t>' is deprecated [-Wdeprecated-declarations]
+  440 |     std::wstring_convert<std::codecvt_utf8_utf16<wchar_t>> conv;
+      |                               ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX15.4.sdk/usr/include/c++/v1/codecvt:568:28: note: 'codecvt_utf8_utf16<wchar_t>' has been explicitly marked deprecated here
+  568 | class _LIBCPP_TEMPLATE_VIS _LIBCPP_DEPRECATED_IN_CXX17 codecvt_utf8_utf16 : public __codecvt_utf8_utf16<_Elem> {
+      |                            ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX15.4.sdk/usr/include/c++/v1/__config:731:41: note: expanded from macro '_LIBCPP_DEPRECATED_IN_CXX17'
+  731 | #    define _LIBCPP_DEPRECATED_IN_CXX17 _LIBCPP_DEPRECATED
+      |                                         ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX15.4.sdk/usr/include/c++/v1/__config:696:49: note: expanded from macro '_LIBCPP_DEPRECATED'
+  696 | #      define _LIBCPP_DEPRECATED __attribute__((__deprecated__))
+      |                                                 ^
+/Users/riengupta/Documents/GitHub/RenderDoc_MCP/llvm360/llvm360/Naive+/src/LLVM360.cpp:440:10: warning: 'wstring_convert<std::codecvt_utf8_utf16<wchar_t>>' is deprecated [-Wdeprecated-declarations]
+  440 |     std::wstring_convert<std::codecvt_utf8_utf16<wchar_t>> conv;
+      |          ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX15.4.sdk/usr/include/c++/v1/locale:3145:28: note: 'wstring_convert<std::codecvt_utf8_utf16<wchar_t>>' has been explicitly marked deprecated here
+ 3145 | class _LIBCPP_TEMPLATE_VIS _LIBCPP_DEPRECATED_IN_CXX17 wstring_convert {
+      |                            ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX15.4.sdk/usr/include/c++/v1/__config:731:41: note: expanded from macro '_LIBCPP_DEPRECATED_IN_CXX17'
+  731 | #    define _LIBCPP_DEPRECATED_IN_CXX17 _LIBCPP_DEPRECATED
+      |                                         ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX15.4.sdk/usr/include/c++/v1/__config:696:49: note: expanded from macro '_LIBCPP_DEPRECATED'
+  696 | #      define _LIBCPP_DEPRECATED __attribute__((__deprecated__))
+      |                                                 ^
+6 warnings generated.
+[7/8] Building CXX object llvm360/Naive+/CMakeFiles/Naive+.dir/src/IR/IRGenerator.cpp.o
+In file included from /Users/riengupta/Documents/GitHub/RenderDoc_MCP/llvm360/llvm360/Naive+/src/IR/IRGenerator.cpp:2:
+/Users/riengupta/Documents/GitHub/RenderDoc_MCP/llvm360/llvm360/Naive+/src/IR/InstructionEmitter.h:229:69: warning: 'getPointerTo' is deprecated: Use PointerType::get instead [-Wdeprecated-declarations]
+  229 |     return BUILD->CreateIntToPtr(guestToHost(func, guestEa), i64_T->getPointerTo(), "addrPtr");
+      |                                                                     ^~~~~~~~~~~~
+      |                                                                     PointerType::get
+/usr/local/Cellar/llvm/21.1.0/include/llvm/IR/Type.h:484:12: note: 'getPointerTo' has been explicitly marked deprecated here
+  484 |   LLVM_ABI LLVM_DEPRECATED("Use PointerType::get instead", "PointerType::get")
+      |            ^
+/usr/local/Cellar/llvm/21.1.0/include/llvm/Support/Compiler.h:250:50: note: expanded from macro 'LLVM_DEPRECATED'
+  250 | #define LLVM_DEPRECATED(MSG, FIX) __attribute__((deprecated(MSG, FIX)))
+      |                                                  ^
+In file included from /Users/riengupta/Documents/GitHub/RenderDoc_MCP/llvm360/llvm360/Naive+/src/IR/IRGenerator.cpp:2:
+/Users/riengupta/Documents/GitHub/RenderDoc_MCP/llvm360/llvm360/Naive+/src/IR/InstructionEmitter.h:861:49: warning: 'getDeclaration' is deprecated: Use getOrInsertDeclaration instead [-Wdeprecated-declarations]
+  861 |     llvm::Function* CtlzFunc = llvm::Intrinsic::getDeclaration(func->m_irGen->m_module, llvm::Intrinsic::ctlz, { i32_T });
+      |                                                 ^~~~~~~~~~~~~~
+      |                                                 getOrInsertDeclaration
+/usr/local/Cellar/llvm/21.1.0/include/llvm/IR/Intrinsics.h:107:3: note: 'getDeclaration' has been explicitly marked deprecated here
+  107 |   LLVM_DEPRECATED("Use getOrInsertDeclaration instead",
+      |   ^
+/usr/local/Cellar/llvm/21.1.0/include/llvm/Support/Compiler.h:250:50: note: expanded from macro 'LLVM_DEPRECATED'
+  250 | #define LLVM_DEPRECATED(MSG, FIX) __attribute__((deprecated(MSG, FIX)))
+      |                                                  ^
+/Users/riengupta/Documents/GitHub/RenderDoc_MCP/llvm360/llvm360/Naive+/src/IR/IRGenerator.cpp:20:25: warning: 'getPointerTo' is deprecated: Use PointerType::get instead [-Wdeprecated-declarations]
+   20 |         XenonStateType->getPointerTo(),
+      |                         ^~~~~~~~~~~~
+      |                         PointerType::get
+/usr/local/Cellar/llvm/21.1.0/include/llvm/IR/Type.h:484:12: note: 'getPointerTo' has been explicitly marked deprecated here
+  484 |   LLVM_ABI LLVM_DEPRECATED("Use PointerType::get instead", "PointerType::get")
+      |            ^
+/usr/local/Cellar/llvm/21.1.0/include/llvm/Support/Compiler.h:250:50: note: expanded from macro 'LLVM_DEPRECATED'
+  250 | #define LLVM_DEPRECATED(MSG, FIX) __attribute__((deprecated(MSG, FIX)))
+      |                                                  ^
+/Users/riengupta/Documents/GitHub/RenderDoc_MCP/llvm360/llvm360/Naive+/src/IR/IRGenerator.cpp:23:56: warning: 'getPointerTo' is deprecated: Use PointerType::get instead [-Wdeprecated-declarations]
+   23 |         llvm::ConstantPointerNull::get(XenonStateType->getPointerTo()),
+      |                                                        ^~~~~~~~~~~~
+      |                                                        PointerType::get
+/usr/local/Cellar/llvm/21.1.0/include/llvm/IR/Type.h:484:12: note: 'getPointerTo' has been explicitly marked deprecated here
+  484 |   LLVM_ABI LLVM_DEPRECATED("Use PointerType::get instead", "PointerType::get")
+      |            ^
+/usr/local/Cellar/llvm/21.1.0/include/llvm/Support/Compiler.h:250:50: note: expanded from macro 'LLVM_DEPRECATED'
+  250 | #define LLVM_DEPRECATED(MSG, FIX) __attribute__((deprecated(MSG, FIX)))
+      |                                                  ^
+/Users/riengupta/Documents/GitHub/RenderDoc_MCP/llvm360/llvm360/Naive+/src/IR/IRGenerator.cpp:50:104: warning: 'getPointerTo' is deprecated: Use PointerType::get instead [-Wdeprecated-declarations]
+   50 |     llvm::FunctionType* importType = llvm::FunctionType::get(m_builder->getVoidTy(), { XenonStateType->getPointerTo(), m_builder->getInt32Ty() }, false);
+      |                                                                                                        ^~~~~~~~~~~~
+      |                                                                                                        PointerType::get
+/usr/local/Cellar/llvm/21.1.0/include/llvm/IR/Type.h:484:12: note: 'getPointerTo' has been explicitly marked deprecated here
+  484 |   LLVM_ABI LLVM_DEPRECATED("Use PointerType::get instead", "PointerType::get")
+      |            ^
+/usr/local/Cellar/llvm/21.1.0/include/llvm/Support/Compiler.h:250:50: note: expanded from macro 'LLVM_DEPRECATED'
+  250 | #define LLVM_DEPRECATED(MSG, FIX) __attribute__((deprecated(MSG, FIX)))
+      |                                                  ^
+/Users/riengupta/Documents/GitHub/RenderDoc_MCP/llvm360/llvm360/Naive+/src/IR/IRGenerator.cpp:54:104: warning: 'getPointerTo' is deprecated: Use PointerType::get instead [-Wdeprecated-declarations]
+   54 |     llvm::FunctionType* callBkType = llvm::FunctionType::get(m_builder->getVoidTy(), { XenonStateType->getPointerTo(), m_builder->getInt32Ty(),  m_builder->getInt8Ty()->getPointerTo() }, false);
+      |                                                                                                        ^~~~~~~~~~~~
+      |                                                                                                        PointerType::get
+/usr/local/Cellar/llvm/21.1.0/include/llvm/IR/Type.h:484:12: note: 'getPointerTo' has been explicitly marked deprecated here
+  484 |   LLVM_ABI LLVM_DEPRECATED("Use PointerType::get instead", "PointerType::get")
+      |            ^
+/usr/local/Cellar/llvm/21.1.0/include/llvm/Support/Compiler.h:250:50: note: expanded from macro 'LLVM_DEPRECATED'
+  250 | #define LLVM_DEPRECATED(MSG, FIX) __attribute__((deprecated(MSG, FIX)))
+      |                                                  ^
+/Users/riengupta/Documents/GitHub/RenderDoc_MCP/llvm360/llvm360/Naive+/src/IR/IRGenerator.cpp:54:170: warning: 'getPointerTo' is deprecated: Use PointerType::get instead [-Wdeprecated-declarations]
+   54 |     llvm::FunctionType* callBkType = llvm::FunctionType::get(m_builder->getVoidTy(), { XenonStateType->getPointerTo(), m_builder->getInt32Ty(),  m_builder->getInt8Ty()->getPointerTo() }, false);
+      |                                                                                                                                                                          ^~~~~~~~~~~~
+      |                                                                                                                                                                          PointerType::get
+/usr/local/Cellar/llvm/21.1.0/include/llvm/IR/Type.h:484:12: note: 'getPointerTo' has been explicitly marked deprecated here
+  484 |   LLVM_ABI LLVM_DEPRECATED("Use PointerType::get instead", "PointerType::get")
+      |            ^
+/usr/local/Cellar/llvm/21.1.0/include/llvm/Support/Compiler.h:250:50: note: expanded from macro 'LLVM_DEPRECATED'
+  250 | #define LLVM_DEPRECATED(MSG, FIX) __attribute__((deprecated(MSG, FIX)))
+      |                                                  ^
+/Users/riengupta/Documents/GitHub/RenderDoc_MCP/llvm360/llvm360/Naive+/src/IR/IRGenerator.cpp:83:31: warning: 'getDeclaration' is deprecated: Use getOrInsertDeclaration instead [-Wdeprecated-declarations]
+   83 |     swap16 = llvm::Intrinsic::getDeclaration(m_module, llvm::Intrinsic::bswap, m_builder->getInt16Ty());
+      |                               ^~~~~~~~~~~~~~
+      |                               getOrInsertDeclaration
+/usr/local/Cellar/llvm/21.1.0/include/llvm/IR/Intrinsics.h:107:3: note: 'getDeclaration' has been explicitly marked deprecated here
+  107 |   LLVM_DEPRECATED("Use getOrInsertDeclaration instead",
+      |   ^
+/usr/local/Cellar/llvm/21.1.0/include/llvm/Support/Compiler.h:250:50: note: expanded from macro 'LLVM_DEPRECATED'
+  250 | #define LLVM_DEPRECATED(MSG, FIX) __attribute__((deprecated(MSG, FIX)))
+      |                                                  ^
+/Users/riengupta/Documents/GitHub/RenderDoc_MCP/llvm360/llvm360/Naive+/src/IR/IRGenerator.cpp:84:31: warning: 'getDeclaration' is deprecated: Use getOrInsertDeclaration instead [-Wdeprecated-declarations]
+   84 |     swap32 = llvm::Intrinsic::getDeclaration(m_module, llvm::Intrinsic::bswap, m_builder->getInt32Ty());
+      |                               ^~~~~~~~~~~~~~
+      |                               getOrInsertDeclaration
+/usr/local/Cellar/llvm/21.1.0/include/llvm/IR/Intrinsics.h:107:3: note: 'getDeclaration' has been explicitly marked deprecated here
+  107 |   LLVM_DEPRECATED("Use getOrInsertDeclaration instead",
+      |   ^
+/usr/local/Cellar/llvm/21.1.0/include/llvm/Support/Compiler.h:250:50: note: expanded from macro 'LLVM_DEPRECATED'
+  250 | #define LLVM_DEPRECATED(MSG, FIX) __attribute__((deprecated(MSG, FIX)))
+      |                                                  ^
+/Users/riengupta/Documents/GitHub/RenderDoc_MCP/llvm360/llvm360/Naive+/src/IR/IRGenerator.cpp:85:31: warning: 'getDeclaration' is deprecated: Use getOrInsertDeclaration instead [-Wdeprecated-declarations]
+   85 |     swap64 = llvm::Intrinsic::getDeclaration(m_module, llvm::Intrinsic::bswap, m_builder->getInt64Ty());
+      |                               ^~~~~~~~~~~~~~
+      |                               getOrInsertDeclaration
+/usr/local/Cellar/llvm/21.1.0/include/llvm/IR/Intrinsics.h:107:3: note: 'getDeclaration' has been explicitly marked deprecated here
+  107 |   LLVM_DEPRECATED("Use getOrInsertDeclaration instead",
+      |   ^
+/usr/local/Cellar/llvm/21.1.0/include/llvm/Support/Compiler.h:250:50: note: expanded from macro 'LLVM_DEPRECATED'
+  250 | #define LLVM_DEPRECATED(MSG, FIX) __attribute__((deprecated(MSG, FIX)))
+      |                                                  ^
+/Users/riengupta/Documents/GitHub/RenderDoc_MCP/llvm360/llvm360/Naive+/src/IR/IRGenerator.cpp:95:33: warning: 'getPointerTo' is deprecated: Use PointerType::get instead [-Wdeprecated-declarations]
+   95 |         tlsVariable->getType()->getPointerTo(),
+      |                                 ^~~~~~~~~~~~
+      |                                 PointerType::get
+/usr/local/Cellar/llvm/21.1.0/include/llvm/IR/Type.h:484:12: note: 'getPointerTo' has been explicitly marked deprecated here
+  484 |   LLVM_ABI LLVM_DEPRECATED("Use PointerType::get instead", "PointerType::get")
+      |            ^
+/usr/local/Cellar/llvm/21.1.0/include/llvm/Support/Compiler.h:250:50: note: expanded from macro 'LLVM_DEPRECATED'
+  250 | #define LLVM_DEPRECATED(MSG, FIX) __attribute__((deprecated(MSG, FIX)))
+      |                                                  ^
+/Users/riengupta/Documents/GitHub/RenderDoc_MCP/llvm360/llvm360/Naive+/src/IR/IRGenerator.cpp:125:51: warning: 'getPointerTo' is deprecated: Use PointerType::get instead [-Wdeprecated-declarations]
+  125 |     llvm::Type* i8PtrTy = m_builder->getInt8Ty()->getPointerTo();
+      |                                                   ^~~~~~~~~~~~
+      |                                                   PointerType::get
+/usr/local/Cellar/llvm/21.1.0/include/llvm/IR/Type.h:484:12: note: 'getPointerTo' has been explicitly marked deprecated here
+  484 |   LLVM_ABI LLVM_DEPRECATED("Use PointerType::get instead", "PointerType::get")
+      |            ^
+/usr/local/Cellar/llvm/21.1.0/include/llvm/Support/Compiler.h:250:50: note: expanded from macro 'LLVM_DEPRECATED'
+  250 | #define LLVM_DEPRECATED(MSG, FIX) __attribute__((deprecated(MSG, FIX)))
+      |                                                  ^
+/Users/riengupta/Documents/GitHub/RenderDoc_MCP/llvm360/llvm360/Naive+/src/IR/IRGenerator.cpp:201:9: warning: 'CreateGlobalStringPtr' is deprecated: Use CreateGlobalString instead [-Wdeprecated-declarations]
+  201 |         DEBUG_CALLBACK();
+      |         ^
+/Users/riengupta/Documents/GitHub/RenderDoc_MCP/llvm360/llvm360/Naive+/src/IR/IRGenerator.cpp:179:144: note: expanded from macro 'DEBUG_CALLBACK'
+  179 | #define DEBUG_CALLBACK() m_builder->CreateCall(dBCallBackFunc, { &*func->m_irFunc->arg_begin(), m_builder->getInt32(instr.address), m_builder->CreateGlobalStringPtr(instr.opcName) });
+      |                                                                                                                                                ^
+/usr/local/Cellar/llvm/21.1.0/include/llvm/IR/IRBuilder.h:2057:3: note: 'CreateGlobalStringPtr' has been explicitly marked deprecated here
+ 2057 |   LLVM_DEPRECATED("Use CreateGlobalString instead", "CreateGlobalString")
+      |   ^
+/usr/local/Cellar/llvm/21.1.0/include/llvm/Support/Compiler.h:250:50: note: expanded from macro 'LLVM_DEPRECATED'
+  250 | #define LLVM_DEPRECATED(MSG, FIX) __attribute__((deprecated(MSG, FIX)))
+      |                                                  ^
+/Users/riengupta/Documents/GitHub/RenderDoc_MCP/llvm360/llvm360/Naive+/src/IR/IRGenerator.cpp:364:25: warning: implicit conversion of NULL constant to 'uint32_t' (aka 'unsigned int') [-Wnull-conversion]
+  364 |     func->end_address = NULL;
+      |                       ~ ^~~~
+      |                         0
+14 warnings generated.
+[8/8] Linking CXX executable bin/Naive+
+FAILED: bin/Naive+ 
+: && /Library/Developer/CommandLineTools/usr/bin/c++ -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.4.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names  llvm360/Naive+/CMakeFiles/Naive+.dir/src/LLVM360.cpp.o llvm360/Naive+/CMakeFiles/Naive+.dir/src/Xex/XexLoader.cpp.o llvm360/Naive+/CMakeFiles/Naive+.dir/src/Xex/AES.cpp.o llvm360/Naive+/CMakeFiles/Naive+.dir/src/misc/Utils.cpp.o llvm360/Naive+/CMakeFiles/Naive+.dir/src/Decoder/InstructionDecoder.cpp.o llvm360/Naive+/CMakeFiles/Naive+.dir/src/IR/IRFunc.cpp.o llvm360/Naive+/CMakeFiles/Naive+.dir/src/IR/IRGenerator.cpp.o -o bin/Naive+  /usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a  /usr/local/Cellar/llvm/21.1.0/lib/libLLVMCore.a  /usr/local/Cellar/llvm/21.1.0/lib/libLLVMIRReader.a  /usr/local/Cellar/llvm/21.1.0/lib/libLLVMBitWriter.a  /usr/local/Cellar/llvm/21.1.0/lib/libLLVMAnalysis.a  /usr/local/Cellar/llvm/21.1.0/lib/libLLVMProfileData.a  /usr/local/Cellar/llvm/21.1.0/lib/libLLVMSymbolize.a  /usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoGSYM.a  /usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoPDB.a  /usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoCodeView.a  /usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoMSF.a  /usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoBTF.a  /usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoDWARF.a  /usr/local/Cellar/llvm/21.1.0/lib/libLLVMObject.a  /usr/local/Cellar/llvm/21.1.0/lib/libLLVMIRReader.a  /usr/local/Cellar/llvm/21.1.0/lib/libLLVMAsmParser.a  /usr/local/Cellar/llvm/21.1.0/lib/libLLVMBitReader.a  /usr/local/Cellar/llvm/21.1.0/lib/libLLVMCore.a  /usr/local/Cellar/llvm/21.1.0/lib/libLLVMRemarks.a  /usr/local/Cellar/llvm/21.1.0/lib/libLLVMBitstreamReader.a  /usr/local/Cellar/llvm/21.1.0/lib/libLLVMMCParser.a  /usr/local/Cellar/llvm/21.1.0/lib/libLLVMMC.a  /usr/local/Cellar/llvm/21.1.0/lib/libLLVMTextAPI.a  /usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoDWARFLowLevel.a  /usr/local/Cellar/llvm/21.1.0/lib/libLLVMBinaryFormat.a  /usr/local/Cellar/llvm/21.1.0/lib/libLLVMTargetParser.a  /usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a  -lm  /usr/local/lib/libz3.dylib  /Library/Developer/CommandLineTools/SDKs/MacOSX15.4.sdk/usr/lib/libz.tbd  /opt/homebrew/lib/libzstd.dylib  /usr/local/Cellar/llvm/21.1.0/lib/libLLVMDemangle.a && :
+ld: warning: ignoring duplicate libraries: '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMCore.a', '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMIRReader.a', '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a'
+ld: warning: ignoring file '/usr/local/lib/libz3.dylib': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMIRReader.a(IRReader.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMBitWriter.a(ValueEnumerator.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMBitWriter.a(BitcodeWriterPass.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMBitWriter.a(BitcodeWriter.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMBitWriter.a(BitWriter.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSymbolize.a(Symbolize.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSymbolize.a(SymbolizableObjectFile.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSymbolize.a(MarkupFilter.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSymbolize.a(Markup.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSymbolize.a(DIPrinter.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoMSF.a(MSFError.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoMSF.a(MSFCommon.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoMSF.a(MSFBuilder.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoMSF.a(MappedBlockStream.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoBTF.a(BTFContext.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoBTF.a(BTFParser.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoGSYM.a(ExtractRanges.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoGSYM.a(ObjectFileTransformer.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoGSYM.a(MergedFunctionsInfo.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoGSYM.a(CallSiteInfo.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoGSYM.a(LookupResult.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoGSYM.a(LineTable.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoGSYM.a(InlineInfo.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoGSYM.a(GsymReader.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoGSYM.a(GsymContext.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoGSYM.a(GsymCreator.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoGSYM.a(FunctionInfo.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoGSYM.a(FileWriter.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoGSYM.a(Header.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoGSYM.a(DwarfTransformer.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoCodeView.a(TypeTableCollection.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoCodeView.a(TypeStreamMerger.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoCodeView.a(TypeRecordMapping.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoCodeView.a(TypeRecordHelpers.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoCodeView.a(TypeHashing.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoCodeView.a(TypeIndexDiscovery.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoCodeView.a(TypeIndex.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoCodeView.a(TypeDumpVisitor.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoCodeView.a(SymbolSerializer.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoCodeView.a(SymbolRecordMapping.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoCodeView.a(SymbolRecordHelpers.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoCodeView.a(SymbolDumper.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoCodeView.a(StringsAndChecksums.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoCodeView.a(SimpleTypeSerializer.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoCodeView.a(RecordSerialization.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoCodeView.a(RecordName.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoCodeView.a(MergingTypeTableBuilder.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoCodeView.a(Line.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoCodeView.a(LazyRandomTypeCollection.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoCodeView.a(GlobalTypeTableBuilder.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoCodeView.a(Formatters.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoCodeView.a(EnumTables.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoCodeView.a(DebugSymbolsSubsection.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoCodeView.a(DebugSymbolRVASubsection.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoCodeView.a(DebugSubsectionVisitor.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoCodeView.a(DebugSubsectionRecord.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoCodeView.a(DebugSubsection.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoCodeView.a(DebugStringTableSubsection.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoCodeView.a(DebugLinesSubsection.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoCodeView.a(DebugInlineeLinesSubsection.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoCodeView.a(DebugFrameDataSubsection.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoCodeView.a(DebugCrossImpSubsection.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoCodeView.a(DebugCrossExSubsection.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoCodeView.a(DebugChecksumsSubsection.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoCodeView.a(CVTypeVisitor.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoCodeView.a(CVSymbolVisitor.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoCodeView.a(ContinuationRecordBuilder.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoCodeView.a(CodeViewRecordIO.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoCodeView.a(CodeViewError.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoCodeView.a(AppendingTypeTableBuilder.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMProfileData.a(SymbolRemappingReader.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMProfileData.a(SampleProfWriter.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMProfileData.a(SampleProfReader.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMProfileData.a(SampleProf.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMProfileData.a(ProfileSummaryBuilder.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMProfileData.a(PGOCtxProfWriter.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMProfileData.a(PGOCtxProfReader.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMProfileData.a(MemProfSummaryBuilder.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMProfileData.a(MemProfSummary.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMProfileData.a(MemProfRadixTree.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMProfileData.a(MemProfReader.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMProfileData.a(MemProfCommon.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMProfileData.a(MemProf.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMProfileData.a(ItaniumManglingCanonicalizer.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMProfileData.a(InstrProfWriter.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMProfileData.a(InstrProfReader.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMProfileData.a(InstrProfCorrelator.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMProfileData.a(InstrProf.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMProfileData.a(IndexedMemProfData.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMProfileData.a(GCOV.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMProfileData.a(DataAccessProf.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMAsmParser.a(Parser.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMAsmParser.a(LLParser.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMAsmParser.a(LLLexer.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoDWARF.a(DWARFVerifier.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoDWARF.a(DWARFUnwindTablePrinter.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoDWARF.a(DWARFUnit.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoDWARF.a(DWARFUnitIndex.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoDWARF.a(DWARFTypeUnit.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoDWARF.a(DWARFLocationExpression.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoDWARF.a(DWARFListTable.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoDWARF.a(DWARFGdbIndex.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoDWARF.a(DWARFFormValue.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoDWARF.a(DWARFExpressionPrinter.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoDWARF.a(DWARFDie.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoDWARF.a(DWARFDebugRnglists.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoDWARF.a(DWARFDebugRangeList.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoDWARF.a(DWARFDebugPubTable.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoDWARF.a(DWARFDebugMacro.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoDWARF.a(DWARFDebugLoc.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoDWARF.a(DWARFDebugLine.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoDWARF.a(DWARFDebugInfoEntry.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoDWARF.a(DWARFDebugFrame.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoDWARF.a(DWARFDebugAranges.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoDWARF.a(DWARFDebugArangeSet.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoDWARF.a(DWARFDebugAddr.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoDWARF.a(DWARFDebugAbbrev.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoDWARF.a(DWARFContext.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoDWARF.a(DWARFCompileUnit.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoDWARF.a(DWARFCFIPrinter.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoDWARF.a(DWARFAcceleratorTable.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoDWARF.a(DWARFAddressRange.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoDWARF.a(DWARFAbbreviationDeclaration.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMBitstreamReader.a(BitstreamReader.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMBitReader.a(ValueList.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMBitReader.a(MetadataLoader.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMBitReader.a(BitcodeReader.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMBitReader.a(BitReader.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMBitReader.a(BitcodeAnalyzer.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMRemarks.a(YAMLRemarkSerializer.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMRemarks.a(YAMLRemarkParser.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMRemarks.a(RemarkStringTable.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMRemarks.a(RemarkStreamer.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMRemarks.a(RemarkSerializer.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMRemarks.a(RemarkParser.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMRemarks.a(RemarkLinker.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMRemarks.a(RemarkFormat.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMRemarks.a(Remark.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMRemarks.a(BitstreamRemarkSerializer.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMRemarks.a(BitstreamRemarkParser.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoPDB.a(TpiStreamBuilder.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoPDB.a(TpiStream.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoPDB.a(TpiHashing.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoPDB.a(SymbolStream.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoPDB.a(SymbolCache.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoPDB.a(RawError.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoPDB.a(GSIStreamBuilder.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoPDB.a(PublicsStream.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoPDB.a(PDBStringTableBuilder.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoPDB.a(PDBStringTable.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoPDB.a(PDBFileBuilder.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoPDB.a(PDBFile.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoPDB.a(NativeSession.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoPDB.a(NamedStreamMap.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoPDB.a(NativeTypeVTShape.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoPDB.a(NativeTypeUDT.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoPDB.a(NativeTypeTypedef.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoPDB.a(NativeTypePointer.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoPDB.a(NativeTypeFunctionSig.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoPDB.a(NativeTypeEnum.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoPDB.a(NativeTypeBuiltin.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoPDB.a(NativeTypeArray.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoPDB.a(NativeSymbolEnumerator.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoPDB.a(NativeSourceFile.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoPDB.a(NativeRawSymbol.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoPDB.a(NativePublicSymbol.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoPDB.a(NativeLineNumber.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoPDB.a(NativeInlineSiteSymbol.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoPDB.a(NativeFunctionSymbol.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoPDB.a(NativeExeSymbol.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoPDB.a(NativeEnumSymbols.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoPDB.a(NativeEnumTypes.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoPDB.a(NativeEnumModules.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoPDB.a(NativeEnumLineNumbers.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoPDB.a(NativeEnumInjectedSources.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoPDB.a(NativeEnumGlobals.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoPDB.a(NativeCompilandSymbol.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoPDB.a(ModuleDebugStream.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoPDB.a(LinePrinter.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoPDB.a(InputFile.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoPDB.a(InjectedSourceStream.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMObject.a(XCOFFObjectFile.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoPDB.a(InfoStreamBuilder.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMObject.a(WindowsResource.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMObject.a(WindowsMachineFlag.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMObject.a(WasmObjectFile.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoPDB.a(InfoStream.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMObject.a(MachOUniversalWriter.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoPDB.a(HashTable.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMObject.a(TapiUniversal.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoPDB.a(Hash.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMObject.a(TapiFile.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoPDB.a(GlobalsStream.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMObject.a(SymbolSize.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoPDB.a(FormatUtil.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoPDB.a(EnumTables.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoPDB.a(DbiStreamBuilder.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMObject.a(SymbolicFile.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoPDB.a(DbiStream.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMObject.a(RelocationResolver.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoPDB.a(DbiModuleList.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoPDB.a(DbiModuleDescriptorBuilder.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMMCParser.a(XCOFFAsmParser.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoPDB.a(DbiModuleDescriptor.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMMCParser.a(WasmAsmParser.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoPDB.a(UDTLayout.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMMCParser.a(MasmParser.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoPDB.a(PDBSymDumper.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMObject.a(RecordStreamer.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMObject.a(OffloadBundle.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMObject.a(OffloadBinary.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoPDB.a(PDBSymbolUsingNamespace.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMMCParser.a(MCTargetAsmParser.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoPDB.a(PDBSymbolUnknown.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMObject.a(ObjectFile.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMMCParser.a(MCAsmParserExtension.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoPDB.a(PDBSymbolTypeVTableShape.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMObject.a(Object.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoPDB.a(PDBSymbolTypeVTable.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMMCParser.a(MCAsmParser.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMObject.a(ModuleSymbolTable.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMMCParser.a(ELFAsmParser.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoPDB.a(PDBSymbolTypeUDT.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMObject.a(Minidump.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMMCParser.a(DarwinAsmParser.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMObject.a(MachOUniversal.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMMCParser.a(GOFFAsmParser.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMObject.a(MachOObjectFile.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMMCParser.a(COFFMasmParser.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMObject.a(IRSymtab.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMMCParser.a(COFFAsmParser.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoPDB.a(PDBSymbolTypeTypedef.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMObject.a(IRObjectFile.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoPDB.a(PDBSymbolTypePointer.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMMCParser.a(AsmParser.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMObject.a(FaultMapParser.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoPDB.a(PDBSymbolTypeManaged.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMMCParser.a(AsmLexer.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMObject.a(GOFFObjectFile.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoPDB.a(PDBSymbolTypeFunctionSig.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMObject.a(Error.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoPDB.a(PDBSymbolTypeFunctionArg.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMObject.a(ELFObjectFile.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoPDB.a(PDBSymbolTypeFriend.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMObject.a(ELF.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoPDB.a(PDBSymbolTypeEnum.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMObject.a(DXContainer.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoPDB.a(PDBSymbolTypeDimension.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMObject.a(Decompressor.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoPDB.a(PDBSymbolTypeCustom.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMObject.a(COFFObjectFile.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoPDB.a(PDBSymbolTypeBuiltin.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMObject.a(COFFModuleDefinition.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoPDB.a(PDBSymbolTypeBaseClass.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMObject.a(COFFImportFile.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoPDB.a(PDBSymbolTypeArray.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMObject.a(BuildID.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoPDB.a(PDBSymbolThunk.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMObject.a(Binary.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoPDB.a(PDBSymbolPublicSymbol.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMObject.a(ArchiveWriter.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoPDB.a(PDBSymbolLabel.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMObject.a(Archive.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoPDB.a(PDBSymbolFuncDebugStart.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoPDB.a(PDBSymbolFuncDebugEnd.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoPDB.a(PDBSymbolFunc.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoPDB.a(PDBSymbolExe.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoPDB.a(PDBSymbolData.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoPDB.a(PDBSymbolCustom.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoPDB.a(PDBSymbolCompilandEnv.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoPDB.a(PDBSymbolCompilandDetails.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoPDB.a(PDBSymbolCompiland.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoPDB.a(PDBSymbolBlock.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoPDB.a(PDBSymbolAnnotation.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoPDB.a(PDBSymbol.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoPDB.a(PDBInterfaceAnchors.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoPDB.a(PDBExtras.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoPDB.a(PDBContext.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoPDB.a(PDB.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoPDB.a(IPDBSourceFile.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoPDB.a(GenericError.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMTextAPI.a(Utils.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMTextAPI.a(TextStubCommon.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMTextAPI.a(TextStub.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMTextAPI.a(TextAPIError.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMTextAPI.a(Target.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMTextAPI.a(SymbolSet.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMTextAPI.a(Symbol.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMTextAPI.a(RecordVisitor.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMTextAPI.a(RecordsSlice.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMTextAPI.a(Platform.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMTextAPI.a(PackedVersion.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMTextAPI.a(TextStubV5.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMTextAPI.a(InterfaceFile.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMTextAPI.a(ArchitectureSet.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMTextAPI.a(Architecture.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoDWARFLowLevel.a(DWARFUnwindTable.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoDWARFLowLevel.a(DWARFExpression.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDebugInfoDWARFLowLevel.a(DWARFCFIProgram.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(Watchdog.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(Valgrind.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(Threading.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(Signals.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(RWMutex.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(ProgramStack.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(Program.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(Process.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(Path.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(Memory.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(Errno.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(DynamicLibrary.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(Atomic.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(Z3Solver.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(xxhash.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(regstrlcpy.c.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(regfree.c.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(regexec.c.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(regerror.c.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(regcomp.c.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(raw_socket_stream.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(raw_ostream.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(raw_os_ostream.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(YAMLTraits.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(YAMLParser.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(WithColor.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(VirtualFileSystem.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(VersionTuple.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMBinaryFormat.a(XCOFF.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(UnicodeNameToCodepointGenerated.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(UnicodeNameToCodepoint.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMBinaryFormat.a(Wasm.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(UnicodeCaseFold.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMBinaryFormat.a(MsgPackWriter.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(Unicode.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMBinaryFormat.a(MsgPackReader.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(TypeSize.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMBinaryFormat.a(MsgPackDocumentYAML.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(Twine.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMBinaryFormat.a(MsgPackDocument.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(TrieRawHashMap.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMBinaryFormat.a(Minidump.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(ToolOutputFile.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMBinaryFormat.a(Magic.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMBinaryFormat.a(MachO.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMBinaryFormat.a(ELF.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMBinaryFormat.a(DXContainer.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(Timer.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMBinaryFormat.a(Dwarf.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(TimeProfiler.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMBinaryFormat.a(COFF.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(ThreadPool.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMBinaryFormat.a(AMDGPUMetadataVerifier.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(TextEncoding.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(CRC.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(TarWriter.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(Compression.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(SystemUtils.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(CommandLine.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(SuffixTree.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(CodeGenCoverage.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(SuffixTreeNode.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(COM.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(StringRef.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(Chrono.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(StringSaver.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(circular_raw_ostream.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(StringMap.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(Caching.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(StringExtras.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(CachePruning.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(Statistic.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(BuryPointer.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(BranchProbability.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(SpecialCaseList.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(BlockFrequency.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(BinaryStreamWriter.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(SourceMgr.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(BinaryStreamRef.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(SmallVector.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(BinaryStreamReader.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(SmallPtrSet.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(BinaryStreamError.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(SlowDynamicAPInt.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(BalancedPartitioning.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(SipHash.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(Base64.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(Signposts.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(AutoConvert.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(SHA256.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(Allocator.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(SHA1.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(ARMWinEH.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(ARMAttributeParser.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDemangle.a(DLangDemangle.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(AArch64BuildAttributes.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDemangle.a(RustDemangle.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(AArch64AttributeParser.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDemangle.a(MicrosoftDemangleNodes.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(ScopedPrinter.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDemangle.a(MicrosoftDemangle.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(ScaledNumber.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDemangle.a(ItaniumDemangle.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(ARMBuildAttributes.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(RISCVISAUtils.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(RISCVAttributeParser.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(APSInt.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMDemangle.a(Demangle.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(APInt.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMCore.a(RuntimeLibcalls.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(APFloat.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMCore.a(VFABIDemangler.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(RISCVAttributes.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(APFixedPoint.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMCore.a(Verifier.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(RewriteRope.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(AMDGPUMetadata.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMCore.a(VectorTypeUtils.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(ABIBreak.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMCore.a(ValueSymbolTable.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(RewriteBuffer.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(blake3_avx512_x86-64_unix.S.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMCore.a(Value.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(Regex.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(blake3_avx2_x86-64_unix.S.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMCore.a(User.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMCore.a(Use.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(RandomNumberGenerator.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(blake3_sse41_x86-64_unix.S.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMCore.a(TypeFinder.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(PrettyStackTrace.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMTargetParser.a(X86TargetParser.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(blake3_sse2_x86-64_unix.S.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMCore.a(TypedPointerType.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(PluginLoader.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMTargetParser.a(Triple.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMCore.a(Type.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMTargetParser.a(TargetParser.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(Parallel.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMCore.a(StructuralHash.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(blake3_neon.c.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMTargetParser.a(SubtargetFeature.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMCore.a(Statepoint.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMCore.a(ReplaceConstant.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMTargetParser.a(RISCVTargetParser.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(PGOOptions.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMCore.a(PseudoProbe.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(OptionStrCmp.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMCore.a(ProfileSummary.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(Optional.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMCore.a(SafepointIRVerifier.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(OptimizedStructLayout.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMCore.a(ProfDataUtils.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMCore.a(PrintPasses.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(NativeFormatting.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMCore.a(PassTimingInfo.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(Mustache.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMCore.a(PassRegistry.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(MSP430AttributeParser.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMCore.a(PassManager.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(MSP430Attributes.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMCore.a(PassInstrumentation.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMTargetParser.a(RISCVISAInfo.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(MD5.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMTargetParser.a(PPCTargetParser.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(ModRef.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(blake3_portable.c.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMTargetParser.a(LoongArchTargetParser.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(MemoryBufferRef.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMCore.a(Pass.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(MemoryBuffer.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMTargetParser.a(Host.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMTargetParser.a(CSKYTargetParser.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(blake3_dispatch.c.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMTargetParser.a(ARMTargetParser.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMTargetParser.a(ARMTargetParserCommon.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMTargetParser.a(AArch64TargetParser.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMCore.a(OptBisect.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(blake3.c.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(MemAlloc.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMCore.a(Operator.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(MathExtras.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMCore.a(ModuleSummaryIndex.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMCore.a(Module.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(ManagedStatic.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(LockFileManager.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMCore.a(Metadata.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(Locale.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMCore.a(Mangler.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(LineIterator.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMCore.a(MemoryModelRelaxationAnnotations.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(LEB128.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMCore.a(MDBuilder.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(KnownFPClass.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMCore.a(LegacyPassManager.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(KnownBits.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMCore.a(LLVMRemarkStreamer.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(JSON.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMCore.a(LLVMContextImpl.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(IntervalMap.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMCore.a(LLVMContext.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(IntEqClasses.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMCore.a(IntrinsicInst.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMCore.a(Instructions.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(InstructionCost.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(InitLLVM.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMCore.a(Instruction.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMCore.a(InlineAsm.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(HexagonAttributes.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(HexagonAttributeParser.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMCore.a(SSAContext.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(GraphWriter.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMCore.a(IRPrintingPasses.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(GlobPattern.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMCore.a(IRBuilder.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMCore.a(Intrinsics.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(FormatVariadic.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMCore.a(Globals.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(FormattedStream.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMCore.a(GVMaterializer.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(FoldingSet.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMCore.a(GCStrategy.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(FloatingPointMode.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMCore.a(Function.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(FileOutputBuffer.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMCore.a(FPEnv.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(FileUtilities.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMCore.a(EHPersonalities.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(FileCollector.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMCore.a(DroppedVariableStatsIR.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMCore.a(DroppedVariableStats.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMCore.a(Dominators.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(ExtensibleRTTI.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMCore.a(DiagnosticPrinter.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMCore.a(DiagnosticInfo.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(ExponentialBackoff.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMCore.a(DiagnosticHandler.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(ErrorHandling.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMCore.a(DebugLoc.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(Error.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMCore.a(DebugProgramInstruction.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(ELFAttrParserExtended.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMCore.a(DIExpressionOptimizer.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMCore.a(DebugInfoMetadata.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(ELFAttrParserCompact.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMCore.a(DebugInfo.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(ELFAttributes.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMCore.a(DataLayout.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMCore.a(DIBuilder.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMCore.a(CycleInfo.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMCore.a(Core.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(DynamicAPInt.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMCore.a(ConvergenceVerifier.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMCore.a(Constants.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMCore.a(ConstantRangeList.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(DJB.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMCore.a(ConstantRange.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMCore.a(ConstantFPRange.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMCore.a(ConstantFold.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(DAGDeltaAlgorithm.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMCore.a(Comdat.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(DivisionByConstantInfo.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMCore.a(BuiltinGCs.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(DeltaTree.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMCore.a(BasicBlock.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(DeltaAlgorithm.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMCore.a(AutoUpgrade.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(DebugCounter.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMCore.a(Attributes.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(Debug.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMCore.a(Assumptions.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(DataExtractor.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMMC.a(XCOFFObjectWriter.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(CSKYAttributeParser.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMCore.a(AsmWriter.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(CSKYAttributes.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(CrashRecoveryContext.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(ConvertUTFWrapper.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(ConvertEBCDIC.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMSupport.a(ConvertUTF.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMMC.a(WinCOFFObjectWriter.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMCore.a(AbstractCallSite.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMMC.a(WasmObjectWriter.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMMC.a(TargetRegistry.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMMC.a(StringTableBuilder.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMMC.a(SPIRVObjectWriter.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMMC.a(MachObjectWriter.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMMC.a(MCXCOFFStreamer.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMMC.a(MCXCOFFObjectTargetWriter.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMMC.a(MCWinEH.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMMC.a(MCWinCOFFStreamer.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMMC.a(MCWin64EH.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMMC.a(MCWasmStreamer.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMMC.a(MCWasmObjectTargetWriter.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMMC.a(MCValue.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMMC.a(MCTargetOptionsCommandFlags.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMMC.a(MCTargetOptions.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMMC.a(MCSymbolXCOFF.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMMC.a(MCSymbolELF.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMMC.a(MCSymbol.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMMC.a(MCSubtargetInfo.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMMC.a(MCSPIRVStreamer.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMMC.a(MCStreamer.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMMC.a(MCSectionXCOFF.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMMC.a(MCSectionWasm.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMMC.a(MCSectionMachO.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMMC.a(MCSectionGOFF.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMMC.a(MCSectionELF.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMMC.a(MCSectionDXContainer.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMMC.a(MCSectionCOFF.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMMC.a(MCSection.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMMC.a(MCSchedule.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMMC.a(MCRegisterInfo.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMMC.a(MCPseudoProbe.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMMC.a(MCObjectWriter.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMMC.a(MCObjectStreamer.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMMC.a(MCObjectFileInfo.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMMC.a(MCNullStreamer.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMMC.a(MCMachObjectTargetWriter.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMMC.a(MCMachOStreamer.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMMC.a(MCLinkerOptimizationHint.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMMC.a(MCLabel.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMMC.a(MCInstrInfo.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMMC.a(MCInstrDesc.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMMC.a(MCInstrAnalysis.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMMC.a(MCInstPrinter.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMMC.a(MCInst.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMMC.a(MCGOFFStreamer.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMMC.a(MCFragment.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMMC.a(MCExpr.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMMC.a(MCELFStreamer.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMMC.a(MCELFObjectTargetWriter.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMMC.a(MCDXContainerWriter.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMMC.a(MCDXContainerStreamer.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMMC.a(MCDwarf.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMMC.a(MCContext.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMMC.a(MCCodeView.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMMC.a(MCCodeEmitter.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMMC.a(MCAssembler.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMMC.a(MCAsmStreamer.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMMC.a(MCAsmMacro.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMMC.a(MCAsmInfoXCOFF.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMMC.a(MCAsmInfoWasm.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMMC.a(MCAsmInfoGOFF.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMMC.a(MCAsmInfoELF.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMMC.a(MCAsmInfoDarwin.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMMC.a(MCAsmInfoCOFF.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMMC.a(MCAsmInfo.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMMC.a(MCAsmBackend.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMMC.a(GOFFObjectWriter.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMMC.a(ELFObjectWriter.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMMC.a(DXContainerRootSignature.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMMC.a(DXContainerPSVInfo.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMMC.a(ConstantPools.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMAnalysis.a(VectorUtils.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMAnalysis.a(ValueTracking.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMAnalysis.a(ValueLatticeUtils.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMAnalysis.a(ValueLattice.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMAnalysis.a(ScopedNoAliasAA.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMAnalysis.a(UniformityAnalysis.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMAnalysis.a(TypeMetadataUtils.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMAnalysis.a(TypeBasedAliasAnalysis.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMAnalysis.a(TrainingLogger.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMAnalysis.a(Trace.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMAnalysis.a(TensorSpec.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMAnalysis.a(TargetTransformInfo.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMAnalysis.a(TargetLibraryInfo.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMAnalysis.a(TFLiteUtils.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMAnalysis.a(SyntheticCountsUtils.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMAnalysis.a(StructuralHash.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMAnalysis.a(StackSafetyAnalysis.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMAnalysis.a(StackLifetime.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMAnalysis.a(StaticDataProfileInfo.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMAnalysis.a(ScalarEvolutionNormalization.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMAnalysis.a(ScalarEvolutionDivision.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMAnalysis.a(ScalarEvolutionAliasAnalysis.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMAnalysis.a(ScalarEvolution.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMAnalysis.a(ReplayInlineAdvisor.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMAnalysis.a(RegionPrinter.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMAnalysis.a(RegionPass.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMAnalysis.a(RegionInfo.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMAnalysis.a(PtrUseVisitor.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMAnalysis.a(ProfileSummaryInfo.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMAnalysis.a(PostDominators.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMAnalysis.a(PhiValues.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMAnalysis.a(PHITransAddr.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMAnalysis.a(OverflowInstAnalysis.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMAnalysis.a(OptimizationRemarkEmitter.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMAnalysis.a(ObjCARCInstKind.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMAnalysis.a(ObjCARCAnalysisUtils.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMAnalysis.a(ObjCARCAliasAnalysis.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMAnalysis.a(NoInferenceModelRunner.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMAnalysis.a(MustExecute.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMAnalysis.a(ModuleSummaryAnalysis.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMAnalysis.a(ModuleDebugInfoPrinter.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMAnalysis.a(ModelUnderTrainingRunner.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMAnalysis.a(MemorySSAUpdater.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMAnalysis.a(MemorySSA.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMAnalysis.a(MemoryProfileInfo.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMAnalysis.a(MemoryLocation.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMAnalysis.a(MemoryDependenceAnalysis.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMAnalysis.a(MemoryBuiltins.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMAnalysis.a(MemDerefPrinter.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMAnalysis.a(MLInlineAdvisor.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMAnalysis.a(LoopPass.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMAnalysis.a(LoopInfo.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMAnalysis.a(LoopUnrollAnalyzer.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMAnalysis.a(LoopNestAnalysis.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMAnalysis.a(LoopCacheAnalysis.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMAnalysis.a(LoopAnalysisManager.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMAnalysis.a(LoopAccessAnalysis.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMAnalysis.a(Local.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMAnalysis.a(Loads.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMAnalysis.a(Lint.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMAnalysis.a(LazyValueInfo.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMAnalysis.a(LazyCallGraph.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMAnalysis.a(LazyBlockFrequencyInfo.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMAnalysis.a(LazyBranchProbabilityInfo.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMAnalysis.a(LastRunTrackingAnalysis.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMAnalysis.a(KernelInfo.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMAnalysis.a(InteractiveModelRunner.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMAnalysis.a(InstructionSimplify.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMAnalysis.a(InstructionPrecedenceTracking.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMAnalysis.a(InstCount.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMAnalysis.a(InlineSizeEstimatorAnalysis.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMAnalysis.a(InlineOrder.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMAnalysis.a(InlineAdvisor.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMAnalysis.a(InlineCost.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMAnalysis.a(IndirectCallPromotionAnalysis.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMAnalysis.a(ImportedFunctionsInliningStatistics.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMAnalysis.a(IVUsers.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMAnalysis.a(IVDescriptors.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMAnalysis.a(IRSimilarityIdentifier.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMAnalysis.a(IR2Vec.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMAnalysis.a(HeatUtils.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMAnalysis.a(HashRecognize.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMAnalysis.a(GuardUtils.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMAnalysis.a(GlobalsModRef.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMAnalysis.a(FunctionPropertiesAnalysis.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMAnalysis.a(FloatingPointPredicateUtils.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMAnalysis.a(EphemeralValuesCache.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMAnalysis.a(DXILMetadataAnalysis.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMAnalysis.a(DXILResource.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMAnalysis.a(DominanceFrontier.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMAnalysis.a(DomTreeUpdater.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMAnalysis.a(DomPrinter.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMAnalysis.a(DomConditionCache.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMAnalysis.a(DevelopmentModeInlineAdvisor.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMAnalysis.a(DependenceGraphBuilder.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMAnalysis.a(DependenceAnalysis.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMAnalysis.a(DemandedBits.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMAnalysis.a(Delinearization.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMAnalysis.a(ConstraintSystem.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMAnalysis.a(DDGPrinter.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMAnalysis.a(DDG.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMAnalysis.a(CycleAnalysis.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMAnalysis.a(CtxProfAnalysis.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMAnalysis.a(ConstantFolding.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMAnalysis.a(CodeMetrics.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMAnalysis.a(CostModel.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMAnalysis.a(CmpInstAnalysis.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMAnalysis.a(CaptureTracking.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMAnalysis.a(CallPrinter.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMAnalysis.a(CallGraphSCCPass.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMAnalysis.a(CallGraph.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMAnalysis.a(CGSCCPassManager.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMAnalysis.a(CFGSCCPrinter.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMAnalysis.a(CFGPrinter.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMAnalysis.a(CFG.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMAnalysis.a(BranchProbabilityInfo.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMAnalysis.a(BlockFrequencyInfoImpl.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMAnalysis.a(BlockFrequencyInfo.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMAnalysis.a(BasicAliasAnalysis.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMAnalysis.a(AssumptionCache.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMAnalysis.a(AssumeBundleQueries.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMAnalysis.a(Analysis.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMAnalysis.a(AliasSetTracker.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMAnalysis.a(AliasAnalysisEvaluator.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+ld: warning: ignoring file '/usr/local/Cellar/llvm/21.1.0/lib/libLLVMAnalysis.a(AliasAnalysis.cpp.o)': found architecture 'x86_64', required architecture 'arm64'
+Undefined symbols for architecture arm64:
+  "llvm::BasicBlock::BasicBlock(llvm::LLVMContext&, llvm::Twine const&, llvm::Function*, llvm::BasicBlock*)", referenced from:
+      llvm::BasicBlock::Create(llvm::LLVMContext&, llvm::Twine const&, llvm::Function*, llvm::BasicBlock*) in IRFunc.cpp.o
+  "llvm::BranchInst::BranchInst(llvm::BasicBlock*, llvm::User::AllocInfo, llvm::InsertPosition)", referenced from:
+      llvm::BranchInst::Create(llvm::BasicBlock*, llvm::InsertPosition) in IRFunc.cpp.o
+  "llvm::BranchInst::BranchInst(llvm::BasicBlock*, llvm::BasicBlock*, llvm::Value*, llvm::User::AllocInfo, llvm::InsertPosition)", referenced from:
+      llvm::BranchInst::Create(llvm::BasicBlock*, llvm::BasicBlock*, llvm::Value*, llvm::InsertPosition) in IRGenerator.cpp.o
+  "llvm::ReturnInst::ReturnInst(llvm::LLVMContext&, llvm::Value*, llvm::User::AllocInfo, llvm::InsertPosition)", referenced from:
+      llvm::ReturnInst::Create(llvm::LLVMContext&, llvm::Value*, llvm::InsertPosition) in LLVM360.cpp.o
+  "llvm::StructType::create(llvm::LLVMContext&, llvm::ArrayRef<llvm::Type*>, llvm::StringRef, bool)", referenced from:
+      IRGenerator::IRGenerator(XexImage*, llvm::Module*, llvm::IRBuilder<llvm::NoFolder, llvm::IRBuilderDefaultInserter>*) in IRGenerator.cpp.o
+      IRGenerator::exportFunctionArray() in IRGenerator.cpp.o
+  "llvm::SwitchInst::addCase(llvm::ConstantInt*, llvm::BasicBlock*)", referenced from:
+      bcctr_e(Instruction, IRFunc*) in IRGenerator.cpp.o
+  "llvm::SwitchInst::SwitchInst(llvm::Value*, llvm::BasicBlock*, unsigned int, llvm::InsertPosition)", referenced from:
+      llvm::SwitchInst::Create(llvm::Value*, llvm::BasicBlock*, unsigned int, llvm::InsertPosition) in IRGenerator.cpp.o
+  "llvm::VectorType::get(llvm::Type*, llvm::ElementCount)", referenced from:
+      llvm::GetElementPtrInst::getGEPReturnType(llvm::Value*, llvm::ArrayRef<llvm::Value*>) in IRFunc.cpp.o
+      llvm::CmpInst::makeCmpResultType(llvm::Type*) in IRGenerator.cpp.o
+  "llvm::ConstantInt::get(llvm::IntegerType*, unsigned long long, bool)", referenced from:
+      llvm::IRBuilderBase::getInt64(unsigned long long) in LLVM360.cpp.o
+      llvm::IRBuilderBase::getInt16(unsigned short) in LLVM360.cpp.o
+      IRFunc::getRegister(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>> const&, int, int) in IRFunc.cpp.o
+      IRFunc::getRegister(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>> const&, int, int) in IRFunc.cpp.o
+      llvm::IRBuilderBase::CreateConstGEP2_32(llvm::Type*, llvm::Value*, unsigned int, unsigned int, llvm::Twine const&, llvm::GEPNoWrapFlags) in IRFunc.cpp.o
+      llvm::IRBuilderBase::CreateConstGEP2_32(llvm::Type*, llvm::Value*, unsigned int, unsigned int, llvm::Twine const&, llvm::GEPNoWrapFlags) in IRFunc.cpp.o
+      IRGenerator::InitLLVM() in IRGenerator.cpp.o
+      IRGenerator::InitLLVM() in IRGenerator.cpp.o
+      ...
+  "llvm::ConstantInt::get(llvm::Type*, unsigned long long, bool)", referenced from:
+      IRGenerator::exportFunctionArray() in IRGenerator.cpp.o
+      IRGenerator::exportFunctionArray() in IRGenerator.cpp.o
+      llvm::IRBuilderBase::CreateShl(llvm::Value*, unsigned long long, llvm::Twine const&, bool, bool) in IRGenerator.cpp.o
+      llvm::IRBuilderBase::CreateLShr(llvm::Value*, unsigned long long, llvm::Twine const&, bool) in IRGenerator.cpp.o
+      llvm::IRBuilderBase::CreateAnd(llvm::Value*, unsigned long long, llvm::Twine const&) in IRGenerator.cpp.o
+  "llvm::Instruction::setIsExact(bool)", referenced from:
+      llvm::BinaryOperator::CreateExact(llvm::Instruction::BinaryOps, llvm::Value*, llvm::Value*, llvm::Twine const&) in LLVM360.cpp.o
+  "llvm::Instruction::setMetadata(unsigned int, llvm::MDNode*)", referenced from:
+      llvm::IRBuilderBase::AddMetadataToInst(llvm::Instruction*) const in LLVM360.cpp.o
+      llvm::IRBuilderBase::setFPAttrs(llvm::Instruction*, llvm::MDNode*, llvm::FastMathFlags) const in LLVM360.cpp.o
+      llvm::BranchInst* llvm::IRBuilderBase::addBranchMetadata<llvm::BranchInst>(llvm::BranchInst*, llvm::MDNode*, llvm::MDNode*) in IRGenerator.cpp.o
+      llvm::BranchInst* llvm::IRBuilderBase::addBranchMetadata<llvm::BranchInst>(llvm::BranchInst*, llvm::MDNode*, llvm::MDNode*) in IRGenerator.cpp.o
+      llvm::SwitchInst* llvm::IRBuilderBase::addBranchMetadata<llvm::SwitchInst>(llvm::SwitchInst*, llvm::MDNode*, llvm::MDNode*) in IRGenerator.cpp.o
+      llvm::SwitchInst* llvm::IRBuilderBase::addBranchMetadata<llvm::SwitchInst>(llvm::SwitchInst*, llvm::MDNode*, llvm::MDNode*) in IRGenerator.cpp.o
+  "llvm::Instruction::setFastMathFlags(llvm::FastMathFlags)", referenced from:
+      llvm::IRBuilderBase::setFPAttrs(llvm::Instruction*, llvm::MDNode*, llvm::FastMathFlags) const in LLVM360.cpp.o
+  "llvm::Instruction::setHasNoSignedWrap(bool)", referenced from:
+      llvm::IRBuilderBase::CreateInsertNUWNSWBinOp(llvm::Instruction::BinaryOps, llvm::Value*, llvm::Value*, llvm::Twine const&, bool, bool) in LLVM360.cpp.o
+      llvm::IRBuilderBase::CreateTrunc(llvm::Value*, llvm::Type*, llvm::Twine const&, bool, bool) in IRGenerator.cpp.o
+  "llvm::Instruction::setHasNoUnsignedWrap(bool)", referenced from:
+      llvm::IRBuilderBase::CreateInsertNUWNSWBinOp(llvm::Instruction::BinaryOps, llvm::Value*, llvm::Value*, llvm::Twine const&, bool, bool) in LLVM360.cpp.o
+      llvm::IRBuilderBase::CreateTrunc(llvm::Value*, llvm::Type*, llvm::Twine const&, bool, bool) in IRGenerator.cpp.o
+  "llvm::Instruction::setNonNeg(bool)", referenced from:
+      llvm::IRBuilderBase::CreateZExt(llvm::Value*, llvm::Type*, llvm::Twine const&, bool) in IRGenerator.cpp.o
+  "llvm::Instruction::Instruction(llvm::Type*, unsigned int, llvm::User::AllocInfo, llvm::InsertPosition)", referenced from:
+      llvm::GetElementPtrInst::GetElementPtrInst(llvm::Type*, llvm::Value*, llvm::ArrayRef<llvm::Value*>, llvm::User::AllocInfo, llvm::Twine const&, llvm::InsertPosition) in IRFunc.cpp.o
+      llvm::CallBase::CallBase(llvm::Type*, unsigned int, llvm::User::AllocInfo, llvm::InsertPosition) in IRGenerator.cpp.o
+  "llvm::Instruction::~Instruction()", referenced from:
+      llvm::GetElementPtrInst::GetElementPtrInst(llvm::Type*, llvm::Value*, llvm::ArrayRef<llvm::Value*>, llvm::User::AllocInfo, llvm::Twine const&, llvm::InsertPosition) in IRFunc.cpp.o
+      llvm::CallBase::~CallBase() in IRGenerator.cpp.o
+      llvm::CmpInst::~CmpInst() in IRGenerator.cpp.o
+  "llvm::LLVMContext::LLVMContext()", referenced from:
+      ___cxx_global_var_init.22 in LLVM360.cpp.o
+  "llvm::LLVMContext::~LLVMContext()", referenced from:
+      ___cxx_global_var_init.22 in LLVM360.cpp.o
+  "llvm::raw_ostream::write(char const*, unsigned long)", referenced from:
+      llvm::raw_ostream::operator<<(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>> const&) in IRFunc.cpp.o
+      llvm::raw_ostream::operator<<(llvm::StringRef) in IRFunc.cpp.o
+  "llvm::ConstantExpr::getBitCast(llvm::Constant*, llvm::Type*, bool)", referenced from:
+      IRGenerator::exportFunctionArray() in IRGenerator.cpp.o
+  "llvm::ConstantExpr::getGetElementPtr(llvm::Type*, llvm::Constant*, llvm::ArrayRef<llvm::Value*>, llvm::GEPNoWrapFlags, std::__1::optional<llvm::ConstantRange>, llvm::Type*)", referenced from:
+      llvm::ConstantExpr::getGetElementPtr(llvm::Type*, llvm::Constant*, llvm::ArrayRef<llvm::Constant*>, llvm::GEPNoWrapFlags, std::__1::optional<llvm::ConstantRange>, llvm::Type*) in IRGenerator.cpp.o
+  "llvm::FunctionType::get(llvm::Type*, llvm::ArrayRef<llvm::Type*>, bool)", referenced from:
+      patchImportsFunctions() in LLVM360.cpp.o
+      IRFunc::genBody() in IRFunc.cpp.o
+      IRGenerator::initExtFunc() in IRGenerator.cpp.o
+      IRGenerator::initExtFunc() in IRGenerator.cpp.o
+  "llvm::FunctionType::get(llvm::Type*, bool)", referenced from:
+      IRGenerator::CxtSwapFunc() in IRGenerator.cpp.o
+      IRGenerator::initExtFunc() in IRGenerator.cpp.o
+      IRGenerator::InitLLVM() in IRGenerator.cpp.o
+  "llvm::ConstantArray::get(llvm::ArrayType*, llvm::ArrayRef<llvm::Constant*>)", referenced from:
+      IRGenerator::exportFunctionArray() in IRGenerator.cpp.o
+  "llvm::IRBuilderBase::CreateSelect(llvm::Value*, llvm::Value*, llvm::Value*, llvm::Twine const&, llvm::Instruction*)", referenced from:
+      slw_e(Instruction, IRFunc*) in IRGenerator.cpp.o
+  "llvm::IRBuilderBase::CreateGlobalString(llvm::StringRef, llvm::Twine const&, unsigned int, llvm::Module*, bool)", referenced from:
+      llvm::IRBuilderBase::CreateGlobalStringPtr(llvm::StringRef, llvm::Twine const&, unsigned int, llvm::Module*, bool) in IRGenerator.cpp.o
+  "llvm::BinaryOperator::Create(llvm::Instruction::BinaryOps, llvm::Value*, llvm::Value*, llvm::Twine const&, llvm::InsertPosition)", referenced from:
+      llvm::IRBuilderBase::CreateInsertNUWNSWBinOp(llvm::Instruction::BinaryOps, llvm::Value*, llvm::Value*, llvm::Twine const&, bool, bool) in LLVM360.cpp.o
+      llvm::BinaryOperator::CreateUDiv(llvm::Value*, llvm::Value*, llvm::Twine const&) in LLVM360.cpp.o
+      llvm::BinaryOperator::CreateExact(llvm::Instruction::BinaryOps, llvm::Value*, llvm::Value*, llvm::Twine const&) in LLVM360.cpp.o
+      llvm::BinaryOperator::CreateDisjoint(llvm::Instruction::BinaryOps, llvm::Value*, llvm::Value*, llvm::Twine const&) in IRGenerator.cpp.o
+      llvm::BinaryOperator::CreateOr(llvm::Value*, llvm::Value*, llvm::Twine const&) in IRGenerator.cpp.o
+      llvm::BinaryOperator::CreateXor(llvm::Value*, llvm::Value*, llvm::Twine const&) in IRGenerator.cpp.o
+      llvm::BinaryOperator::CreateAnd(llvm::Value*, llvm::Value*, llvm::Twine const&) in IRGenerator.cpp.o
+      ...
+  "llvm::ConstantStruct::get(llvm::StructType*, llvm::ArrayRef<llvm::Constant*>)", referenced from:
+      IRGenerator::exportFunctionArray() in IRGenerator.cpp.o
+  "llvm::GlobalVariable::GlobalVariable(llvm::Module&, llvm::Type*, bool, llvm::GlobalValue::LinkageTypes, llvm::Constant*, llvm::Twine const&, llvm::GlobalVariable*, llvm::GlobalValue::ThreadLocalMode, std::__1::optional<unsigned int>, bool)", referenced from:
+      IRGenerator::CxtSwapFunc() in IRGenerator.cpp.o
+      IRGenerator::InitLLVM() in IRGenerator.cpp.o
+      IRGenerator::exportFunctionArray() in IRGenerator.cpp.o
+      IRGenerator::exportFunctionArray() in IRGenerator.cpp.o
+  "llvm::raw_fd_ostream::close()", referenced from:
+      IRGenerator::writeIRtoFile() in IRGenerator.cpp.o
+  "llvm::raw_fd_ostream::raw_fd_ostream(llvm::StringRef, std::__1::error_code&)", referenced from:
+      IRGenerator::writeIRtoFile() in IRGenerator.cpp.o
+  "llvm::raw_fd_ostream::~raw_fd_ostream()", referenced from:
+      IRGenerator::writeIRtoFile() in IRGenerator.cpp.o
+      IRGenerator::writeIRtoFile() in IRGenerator.cpp.o
+  "llvm::IRBuilderFolder::~IRBuilderFolder()", referenced from:
+      llvm::NoFolder::~NoFolder() in LLVM360.cpp.o
+  "llvm::SmallVectorBase<unsigned int>::SmallVectorBase(void*, unsigned long)", referenced from:
+      llvm::SmallVectorTemplateCommon<std::__1::pair<unsigned int, llvm::MDNode*>, void>::SmallVectorTemplateCommon(unsigned long) in LLVM360.cpp.o
+  "llvm::MetadataTracking::untrack(void*, llvm::Metadata&)", referenced from:
+      llvm::MetadataTracking::untrack(llvm::Metadata*&) in LLVM360.cpp.o
+  "llvm::GetElementPtrInst::getIndexedType(llvm::Type*, llvm::ArrayRef<llvm::Value*>)", referenced from:
+      llvm::GetElementPtrInst::GetElementPtrInst(llvm::Type*, llvm::Value*, llvm::ArrayRef<llvm::Value*>, llvm::User::AllocInfo, llvm::Twine const&, llvm::InsertPosition) in IRFunc.cpp.o
+  "llvm::GetElementPtrInst::setNoWrapFlags(llvm::GEPNoWrapFlags)", referenced from:
+      llvm::GetElementPtrInst::Create(llvm::Type*, llvm::Value*, llvm::ArrayRef<llvm::Value*>, llvm::GEPNoWrapFlags, llvm::Twine const&, llvm::InsertPosition) in IRFunc.cpp.o
+  "llvm::GetElementPtrInst::init(llvm::Value*, llvm::ArrayRef<llvm::Value*>, llvm::Twine const&)", referenced from:
+      llvm::GetElementPtrInst::GetElementPtrInst(llvm::Type*, llvm::Value*, llvm::ArrayRef<llvm::Value*>, llvm::User::AllocInfo, llvm::Twine const&, llvm::InsertPosition) in IRFunc.cpp.o
+  "llvm::ConstantPointerNull::get(llvm::PointerType*)", referenced from:
+      IRGenerator::CxtSwapFunc() in IRGenerator.cpp.o
+  "llvm::DisableABIBreakingChecks", referenced from:
+      llvm::VerifyDisableABIBreakingChecks in LLVM360.cpp.o
+  "llvm::IRBuilderDefaultInserter::~IRBuilderDefaultInserter()", referenced from:
+      llvm::IRBuilder<llvm::NoFolder, llvm::IRBuilderDefaultInserter>::~IRBuilder() in LLVM360.cpp.o
+  "llvm::Type::getInt16Ty(llvm::LLVMContext&)", referenced from:
+      llvm::IRBuilderBase::getInt16Ty() in LLVM360.cpp.o
+  "llvm::Type::getInt32Ty(llvm::LLVMContext&)", referenced from:
+      llvm::IRBuilderBase::getInt32Ty() in LLVM360.cpp.o
+      llvm::IRBuilderBase::CreateConstGEP2_32(llvm::Type*, llvm::Value*, unsigned int, unsigned int, llvm::Twine const&, llvm::GEPNoWrapFlags) in IRFunc.cpp.o
+      llvm::IRBuilderBase::CreateConstGEP2_32(llvm::Type*, llvm::Value*, unsigned int, unsigned int, llvm::Twine const&, llvm::GEPNoWrapFlags) in IRFunc.cpp.o
+      IRGenerator::IRGenerator(XexImage*, llvm::Module*, llvm::IRBuilder<llvm::NoFolder, llvm::IRBuilderDefaultInserter>*) in IRGenerator.cpp.o
+      llvm::IRBuilderBase::CreateGlobalStringPtr(llvm::StringRef, llvm::Twine const&, unsigned int, llvm::Module*, bool) in IRGenerator.cpp.o
+  "llvm::Type::getInt64Ty(llvm::LLVMContext&)", referenced from:
+      llvm::IRBuilderBase::getInt64Ty() in LLVM360.cpp.o
+      IRFunc::getRegister(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>> const&, int, int) in IRFunc.cpp.o
+      IRFunc::getRegister(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>> const&, int, int) in IRFunc.cpp.o
+      IRGenerator::IRGenerator(XexImage*, llvm::Module*, llvm::IRBuilder<llvm::NoFolder, llvm::IRBuilderDefaultInserter>*) in IRGenerator.cpp.o
+      IRGenerator::IRGenerator(XexImage*, llvm::Module*, llvm::IRBuilder<llvm::NoFolder, llvm::IRBuilderDefaultInserter>*) in IRGenerator.cpp.o
+      IRGenerator::IRGenerator(XexImage*, llvm::Module*, llvm::IRBuilder<llvm::NoFolder, llvm::IRBuilderDefaultInserter>*) in IRGenerator.cpp.o
+      IRGenerator::IRGenerator(XexImage*, llvm::Module*, llvm::IRBuilder<llvm::NoFolder, llvm::IRBuilderDefaultInserter>*) in IRGenerator.cpp.o
+      IRGenerator::IRGenerator(XexImage*, llvm::Module*, llvm::IRBuilder<llvm::NoFolder, llvm::IRBuilderDefaultInserter>*) in IRGenerator.cpp.o
+      ...
+  "llvm::Type::getDoubleTy(llvm::LLVMContext&)", referenced from:
+      IRGenerator::IRGenerator(XexImage*, llvm::Module*, llvm::IRBuilder<llvm::NoFolder, llvm::IRBuilderDefaultInserter>*) in IRGenerator.cpp.o
+  "llvm::Type::getInt1Ty(llvm::LLVMContext&)", referenced from:
+      llvm::CmpInst::makeCmpResultType(llvm::Type*) in IRGenerator.cpp.o
+      llvm::CmpInst::makeCmpResultType(llvm::Type*) in IRGenerator.cpp.o
+      llvm::IRBuilderBase::getInt1Ty() in IRGenerator.cpp.o
+  "llvm::Type::getInt8Ty(llvm::LLVMContext&)", referenced from:
+      llvm::IRBuilderBase::getInt8Ty() in IRGenerator.cpp.o
+  "llvm::Type::getVoidTy(llvm::LLVMContext&)", referenced from:
+      llvm::IRBuilderBase::getVoidTy() in LLVM360.cpp.o
+  "llvm::User::operator delete(void*)", referenced from:
+      llvm::StoreInst::operator delete(void*) in LLVM360.cpp.o
+      llvm::UnaryInstruction::operator delete(void*) in LLVM360.cpp.o
+      llvm::User::operator delete(void*, llvm::User::IntrusiveOperandsAllocMarker) in LLVM360.cpp.o
+      llvm::User::operator delete(void*, llvm::User::HungOffOperandsAllocMarker) in LLVM360.cpp.o
+      llvm::GlobalVariable::operator delete(void*) in IRGenerator.cpp.o
+      llvm::User::operator delete(void*, llvm::User::IntrusiveOperandsAndDescriptorAllocMarker) in IRGenerator.cpp.o
+      llvm::CmpInst::operator delete(void*) in IRGenerator.cpp.o
+      ...
+  "llvm::User::operator new(unsigned long, llvm::User::HungOffOperandsAllocMarker)", referenced from:
+      llvm::Function::Create(llvm::FunctionType*, llvm::GlobalValue::LinkageTypes, llvm::Twine const&, llvm::Module*) in LLVM360.cpp.o
+      llvm::SwitchInst::operator new(unsigned long) in IRGenerator.cpp.o
+  "llvm::User::operator new(unsigned long, llvm::User::IntrusiveOperandsAllocMarker)", referenced from:
+      llvm::StoreInst::operator new(unsigned long) in LLVM360.cpp.o
+      llvm::UnaryInstruction::operator new(unsigned long) in LLVM360.cpp.o
+      llvm::ReturnInst::Create(llvm::LLVMContext&, llvm::Value*, llvm::InsertPosition) in LLVM360.cpp.o
+      llvm::BranchInst::Create(llvm::BasicBlock*, llvm::InsertPosition) in IRFunc.cpp.o
+      llvm::GetElementPtrInst::Create(llvm::Type*, llvm::Value*, llvm::ArrayRef<llvm::Value*>, llvm::Twine const&, llvm::InsertPosition) in IRFunc.cpp.o
+      llvm::GlobalVariable::operator new(unsigned long) in IRGenerator.cpp.o
+      llvm::CmpInst::operator new(unsigned long) in IRGenerator.cpp.o
+      ...
+  "llvm::User::operator new(unsigned long, llvm::User::IntrusiveOperandsAndDescriptorAllocMarker)", referenced from:
+      llvm::CallInst::Create(llvm::FunctionType*, llvm::Value*, llvm::ArrayRef<llvm::Value*>, llvm::ArrayRef<llvm::OperandBundleDefT<llvm::Value*>>, llvm::Twine const&, llvm::InsertPosition) in IRGenerator.cpp.o
+  "llvm::errs()", referenced from:
+      IRFunc::getRegister(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>> const&, int, int) in IRFunc.cpp.o
+      IRGenerator::writeIRtoFile() in IRGenerator.cpp.o
+  "llvm::outs()", referenced from:
+      IRGenerator::writeIRtoFile() in IRGenerator.cpp.o
+  "llvm::APInt::initSlowCase(llvm::APInt const&)", referenced from:
+      llvm::APInt::APInt(llvm::APInt const&) in IRGenerator.cpp.o
+  "llvm::Module::Module(llvm::StringRef, llvm::LLVMContext&)", referenced from:
+      ___cxx_global_var_init.23 in LLVM360.cpp.o
+  "llvm::CmpInst::CmpInst(llvm::Type*, llvm::Instruction::OtherOps, llvm::CmpInst::Predicate, llvm::Value*, llvm::Value*, llvm::Twine const&, llvm::InsertPosition, llvm::Instruction*)", referenced from:
+      llvm::ICmpInst::ICmpInst(llvm::CmpInst::Predicate, llvm::Value*, llvm::Value*, llvm::Twine const&) in IRGenerator.cpp.o
+  "llvm::CallInst::init(llvm::FunctionType*, llvm::Value*, llvm::ArrayRef<llvm::Value*>, llvm::ArrayRef<llvm::OperandBundleDefT<llvm::Value*>>, llvm::Twine const&)", referenced from:
+      llvm::CallInst::CallInst(llvm::FunctionType*, llvm::Value*, llvm::ArrayRef<llvm::Value*>, llvm::ArrayRef<llvm::OperandBundleDefT<llvm::Value*>>, llvm::Twine const&, llvm::User::AllocInfo, llvm::InsertPosition) in IRGenerator.cpp.o
+  "llvm::CastInst::Create(llvm::Instruction::CastOps, llvm::Value*, llvm::Type*, llvm::Twine const&, llvm::InsertPosition)", referenced from:
+      llvm::IRBuilderBase::CreateCast(llvm::Instruction::CastOps, llvm::Value*, llvm::Type*, llvm::Twine const&, llvm::MDNode*, llvm::FMFSource) in LLVM360.cpp.o
+      llvm::IRBuilderBase::CreateTrunc(llvm::Value*, llvm::Type*, llvm::Twine const&, bool, bool) in IRGenerator.cpp.o
+  "llvm::Constant::getNullValue(llvm::Type*)", referenced from:
+      llvm::IRBuilderBase::CreateNeg(llvm::Value*, llvm::Twine const&, bool) in IRGenerator.cpp.o
+  "llvm::Constant::getAllOnesValue(llvm::Type*)", referenced from:
+      llvm::IRBuilderBase::CreateNot(llvm::Value*, llvm::Twine const&) in IRGenerator.cpp.o
+  "llvm::Function::Function(llvm::FunctionType*, llvm::GlobalValue::LinkageTypes, unsigned int, llvm::Twine const&, llvm::Module*)", referenced from:
+      llvm::Function::Create(llvm::FunctionType*, llvm::GlobalValue::LinkageTypes, llvm::Twine const&, llvm::Module*) in LLVM360.cpp.o
+  "llvm::LoadInst::LoadInst(llvm::Type*, llvm::Value*, llvm::Twine const&, bool, llvm::Align, llvm::InsertPosition)", referenced from:
+      llvm::IRBuilderBase::CreateAlignedLoad(llvm::Type*, llvm::Value*, llvm::MaybeAlign, bool, llvm::Twine const&) in LLVM360.cpp.o
+  "llvm::ZExtInst::ZExtInst(llvm::Value*, llvm::Type*, llvm::Twine const&, llvm::InsertPosition)", referenced from:
+      llvm::IRBuilderBase::CreateZExt(llvm::Value*, llvm::Type*, llvm::Twine const&, bool) in IRGenerator.cpp.o
+  "llvm::ArrayType::get(llvm::Type*, unsigned long long)", referenced from:
+      IRGenerator::IRGenerator(XexImage*, llvm::Module*, llvm::IRBuilder<llvm::NoFolder, llvm::IRBuilderDefaultInserter>*) in IRGenerator.cpp.o
+      IRGenerator::IRGenerator(XexImage*, llvm::Module*, llvm::IRBuilder<llvm::NoFolder, llvm::IRBuilderDefaultInserter>*) in IRGenerator.cpp.o
+      IRGenerator::exportFunctionArray() in IRGenerator.cpp.o
+  "llvm::Intrinsic::getOrInsertDeclaration(llvm::Module*, unsigned int, llvm::ArrayRef<llvm::Type*>)", referenced from:
+      llvm::Intrinsic::getDeclaration(llvm::Module*, unsigned int, llvm::ArrayRef<llvm::Type*>) in IRGenerator.cpp.o
+  "llvm::StoreInst::StoreInst(llvm::Value*, llvm::Value*, bool, llvm::Align, llvm::InsertPosition)", referenced from:
+      llvm::IRBuilderBase::CreateAlignedStore(llvm::Value*, llvm::Value*, llvm::MaybeAlign, bool) in LLVM360.cpp.o
+  "llvm::BasicBlock::getDataLayout() const", referenced from:
+      llvm::IRBuilderBase::CreateAlignedStore(llvm::Value*, llvm::Value*, llvm::MaybeAlign, bool) in LLVM360.cpp.o
+      llvm::IRBuilderBase::CreateAlignedLoad(llvm::Type*, llvm::Value*, llvm::MaybeAlign, bool, llvm::Twine const&) in LLVM360.cpp.o
+  "llvm::DataLayout::getABITypeAlign(llvm::Type*) const", referenced from:
+      llvm::IRBuilderBase::CreateAlignedStore(llvm::Value*, llvm::Value*, llvm::MaybeAlign, bool) in LLVM360.cpp.o
+      llvm::IRBuilderBase::CreateAlignedLoad(llvm::Type*, llvm::Value*, llvm::MaybeAlign, bool, llvm::Twine const&) in LLVM360.cpp.o
+  "llvm::StructType::containsHomogeneousTypes() const", referenced from:
+      llvm::FPMathOperator::isComposedOfHomogeneousFloatingPointTypes(llvm::Type*) in LLVM360.cpp.o
+  "llvm::AttributeList::addAttributeAtIndex(llvm::LLVMContext&, unsigned int, llvm::Attribute::AttrKind) const", referenced from:
+      llvm::AttributeList::addFnAttribute(llvm::LLVMContext&, llvm::Attribute::AttrKind) const in IRGenerator.cpp.o
+  "llvm::IRBuilderBase::SetInstDebugLocation(llvm::Instruction*) const", referenced from:
+      llvm::IRBuilderBase::AddMetadataToInst(llvm::Instruction*) const in LLVM360.cpp.o
+  "llvm::SmallVectorBase<unsigned int>::size() const", referenced from:
+      llvm::SmallVectorTemplateCommon<std::__1::pair<unsigned int, llvm::MDNode*>, void>::end() in LLVM360.cpp.o
+      llvm::SmallVectorTemplateCommon<std::__1::pair<unsigned int, llvm::MDNode*>, void>::end() const in LLVM360.cpp.o
+  "llvm::Type::getPointerTo(unsigned int) const", referenced from:
+      patchImportsFunctions() in LLVM360.cpp.o
+      IRFunc::genBody() in IRFunc.cpp.o
+      IRGenerator::CxtSwapFunc() in IRGenerator.cpp.o
+      IRGenerator::CxtSwapFunc() in IRGenerator.cpp.o
+      IRGenerator::initExtFunc() in IRGenerator.cpp.o
+      IRGenerator::initExtFunc() in IRGenerator.cpp.o
+      IRGenerator::initExtFunc() in IRGenerator.cpp.o
+      ...
+  "llvm::Type::getScalarSizeInBits() const", referenced from:
+      llvm::IRBuilderBase::CreateIntCast(llvm::Value*, llvm::Type*, bool, llvm::Twine const&) in IRGenerator.cpp.o
+      llvm::IRBuilderBase::CreateIntCast(llvm::Value*, llvm::Type*, bool, llvm::Twine const&) in IRGenerator.cpp.o
+  "llvm::Value::getContext() const", referenced from:
+      llvm::CallBase::addFnAttr(llvm::Attribute::AttrKind) in IRGenerator.cpp.o
+  "llvm::Module::print(llvm::raw_ostream&, llvm::AssemblyAnnotationWriter*, bool, bool) const", referenced from:
+      IRGenerator::writeIRtoFile() in IRGenerator.cpp.o
+      IRGenerator::writeIRtoFile() in IRGenerator.cpp.o
+  "llvm::Function::BuildLazyArguments() const", referenced from:
+      llvm::Function::CheckLazyArguments() const in IRFunc.cpp.o
+  "vtable for llvm::IRBuilderFolder", referenced from:
+      llvm::IRBuilderFolder::IRBuilderFolder() in LLVM360.cpp.o
+   NOTE: a missing vtable usually means the first non-inline virtual member function has no definition.
+  "vtable for llvm::IRBuilderDefaultInserter", referenced from:
+      llvm::IRBuilderDefaultInserter::IRBuilderDefaultInserter() in LLVM360.cpp.o
+   NOTE: a missing vtable usually means the first non-inline virtual member function has no definition.
+  "vtable for llvm::NoFolder", referenced from:
+      llvm::NoFolder::NoFolder() in LLVM360.cpp.o
+   NOTE: a missing vtable usually means the first non-inline virtual member function has no definition.
+ld: symbol(s) not found for architecture arm64
+c++: error: linker command failed with exit code 1 (use -v to see invocation)
+ninja: build stopped: subcommand failed.

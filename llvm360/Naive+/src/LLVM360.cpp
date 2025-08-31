@@ -185,7 +185,7 @@ inline uint32_t recursiveNopCheck(uint32_t address)
 	const char* name = g_irGen->instrsList.at(address).opcName.c_str();
 	if (strcmp(name, "nop") == 0)
 	{
-		recursiveNopCheck(address + 4);
+		return recursiveNopCheck(address + 4);
 	}
 	else
 	{
